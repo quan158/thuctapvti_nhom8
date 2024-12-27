@@ -98,5 +98,26 @@ include("connect.php");
         $run = mysqli_query($conn, $sql);
         return $run;
     }
+    //get order
+    public function select_order(){
+        global $conn;
+        $sql = "SELECT * FROM order_pro";
+        $run = mysqli_query($conn, $sql);
+        return $run;
+    }
+    //get order_detail
+    public function order_detail( $id_order ){
+        global $conn;
+        $sql = "SELECT * FROM order_detail WHERE id_order='$id_order'";
+        $run = mysqli_query($conn, $sql);
+        return $run;
+    }
+    public function order_status($id_order, $status)
+    {
+        global $conn;
+        $sql = "UPDATE order_pro SET status='$status' WHERE id_order='$id_order'";
+        $run = mysqli_query($conn, $sql);
+        return $run;
+    }
     }
 ?>
