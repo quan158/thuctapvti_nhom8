@@ -56,14 +56,14 @@ class data_user
     public function select_product()
     {
         global $conn;
-        $sql = "select * from product";
+        $sql = "select * from pet";
         $run = mysqli_query($conn, $sql);
         return $run;
     }
     public function select_product_cat($category)
     {
         global $conn;
-        $sql = "select * from product where category='$category'";
+        $sql = "select * from pet where category='$category'";
         $run = mysqli_query($conn, $sql);
         return $run;
     }
@@ -71,14 +71,14 @@ class data_user
     public function select_product_id($id)
     {
         global $conn;
-        $sql = "select * from product where id_pro='$id'";
+        $sql = "select * from pet where id_pet='$id'";
         $run = mysqli_query($conn, $sql);
         return $run;
     }
     public function get_additional_images($id_pro)
     {
         global $conn;
-        $sql = "SELECT path FROM image_library WHERE id_pro = '$id_pro'";
+        $sql = "SELECT path FROM image_library WHERE id_pet = '$id_pro'";
         $result = mysqli_query($conn, $sql);
         $images = [];
         if ($result) {
@@ -91,7 +91,7 @@ class data_user
     public function update_quantity_pro($id_pro, $quantity)
     {
         global $conn;
-        $sql = "UPDATE `product` SET `quantity`='$quantity' WHERE id_pro ='$id_pro'";
+        $sql = "UPDATE `product` SET `quantity`='$quantity' WHERE id_pet ='$id_pro'";
         $run = mysqli_query($conn, $sql);
         return $run;
     }

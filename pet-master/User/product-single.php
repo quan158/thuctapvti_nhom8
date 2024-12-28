@@ -114,23 +114,23 @@ img {
 	    		<div class="row">
 					<?php
 					$category = '';
-					$select_id_pro = $get_data->select_product_id($_GET["id_pro"]);
+					$select_id_pro = $get_data->select_product_id($_GET["id_pet"]);
 					foreach($select_id_pro as $pro) {
-						$additional_images = $get_data->get_additional_images($pro['id_pro']);
+						$additional_images = $get_data->get_additional_images($pro['id_pet']);
 					?>
 	    			<div class="col-lg-6 mb-5 ftco-animate">
-                    <a id="main-image-link" href="../Admin/upload/<?php echo $pro['image'] ?>" class="image-popup">
-                        <img id="main-image" class="img-fluid main-image" src="../Admin/upload/<?php echo $pro['image'] ?>" alt="<?php echo $pro['name_pro'] ?>">
+                    <a id="main-image-link" href="../Admin/upload/<?php echo $pro['picture'] ?>" class="image-popup">
+                        <img id="main-image" class="img-fluid main-image" src="../Admin/upload/<?php echo $pro['picture'] ?>" alt="<?php echo $pro['name_pet'] ?>">
                     </a>
                     <div class="additional-images mt-2 d-flex ">
                         <?php $category = $pro['category'];
 						 foreach ($additional_images as $image) { ?>
-                            <img src="../Admin/upload/<?php echo $image; ?>" alt="<?php echo $pro['name_pro'] ?>" class="img-thumbnail" style="width: 100px; height: 100px; margin-right: 5px;" onclick="swapImages(this);">
+                            <img src="../Admin/upload/<?php echo $image; ?>" alt="<?php echo $pro['name_pet'] ?>" class="img-thumbnail" style="width: 100px; height: 100px; margin-right: 5px;" onclick="swapImages(this);">
                         <?php } ?>
                     </div>
                 </div>
 	    			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
-	    				<h3><?php echo $pro['name_pro'] ?></h3>
+	    				<h3><?php echo $pro['name_pet'] ?></h3>
 	    				<div class="rating d-flex">
 								<p class="text-left mr-4">
 									<a href="#" class="mr-2">5.0</a>
@@ -146,19 +146,23 @@ img {
 								<p class="text-left">
 									<a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Đã bán</span></a>
 								</p>
-							</div>
-	    				<p class="price"><?php if (isset($pro['price_sale'])) { ?><span class="price-sale"><?php
-                            $price_sale = $pro['price_sale']; 
-                            $formatted_price = number_format($price_sale, 0, ',', '.'); 
-                            echo $formatted_price . ' ₫';
-							?></span><?php } else { ?><span class="price-sale"><?php $price_sale = $pro['price']; 
-                            $formatted_price = number_format($price_sale, 0, ',', '.'); 
-                            echo $formatted_price . ' ₫'; ?></span> <?php } ?></p>
-	    				<p><?php echo $pro['description'] ?></p>
-							<div class="row mt-4">
-								<div class="col-md-6">
-									<div class="form-group d-flex">
-			            </div>
+								</div>
+						<p class="price">
+    					<span class="price-sale">
+       					 <?php 
+       					 $price = $pro['price']; 
+       					 $formatted_price = number_format($price, 0, ',', '.'); 
+       					 echo $formatted_price . ' ₫'; 
+       					 ?>
+    					</span>
+						</p>
+						<p><?php echo $pro['description']; ?></p>
+						<div class="row mt-4">
+    				<div class="col-md-6">
+        				<div class="form-group d-flex">
+        				</div>
+    				</div>
+				</div>
 								</div>
 								<div class="w-100"></div>
 								<div class="input-group col-md-6 d-flex mb-3">
@@ -196,39 +200,40 @@ img {
 				if ($_POST['quantity'] < 1 || $_POST['quantity'] > $se['quantity']) {
 					echo "<script>alert('Số lượng không phù hợp');</script>";
 					} else {
-						$id_pro = $_GET['id_pro'];
+						$id_pro = $_GET['id_pet'];
 						$quantity = $_POST['quantity'];
-						$update = $get_data->update_quantity_pro($se['id_pro'], $se['quantity'] - $quantity);
+						$update = $get_data->update_quantity_pro($se['id_pet'], $se['quantity'] - $quantity);
 						$new_product = array(
-							'id_pro' => $se['id_pro'],
-							'name' => $se['name_pro'],
+							'id_pet' => $se['id_pet'],
+							'name' => $se['name_pet'],
 							'quantity' => $quantity,
 							'picture' => $se['image'],
-							'price' => $price_sale,
+							'price' => $price_sale = $se['price'],
 							'total' => $price_sale * $quantity
 						);
 						if (isset($_SESSION['user'])) {
 							$select_cart = $get_data->select_cart($_SESSION['user']);
 							$found = false;
 							foreach ($select_cart as $cart_item) {
-								if ($cart_item['id_pro'] == $id_pro) {
+								if ($cart_item['id_pet'] == $id_pro) {
 									$new_total = $cart_item['total'] + $quantity * $cart_item['price'];
 									$found = true;
-									$updateResult = $get_data->update_cart_item($cart_item['id_pro'], $cart_item['quantity_order'] + $quantity, $new_total, $_SESSION['user']);
+									$updateResult = $get_data->update_cart_item($cart_item['id_pet'], $cart_item['quantity_order'] + $quantity, $new_total, $_SESSION['user']);
 									echo "<script>window.location=('cart.php')</script>";
 									break;
 								}
 							}
 
 							if (!$found) {
-								$insertResult = $get_data->insert_Cart($_SESSION['user'], $se['id_pro'], $se['name_pro'], $price_sale, $se['image'], $quantity, $price_sale * $quantity);
+								$insertResult = $get_data->insert_Cart($_SESSION['user'], $se['id_pet'], $se['name_pet'], $price_sale, $se['image'], $quantity, $price_sale * $quantity);
 								echo "<script>window.location=('cart.php')</script>";
 							}
 						}else if(isset($_SESSION['cart'])){
 							$found = false;
+				
 							
 							foreach($_SESSION['cart'] as &$cart_item){
-                        	if($cart_item['id_pro'] == $id_pro){
+                        	if($cart_item['id_pet'] == $id_pro){
                             $cart_item['quantity'] += $quantity;
         					$cart_item['total'] += $quantity * $cart_item['price'];
                             $found = true;
@@ -261,50 +266,59 @@ img {
     	</div>
     	<div class="container">
     		<div class="row">
-				<?php
-				$select_cat = $get_data->select_product_cat( $category);
-				$dem = 0;
-				foreach ($select_cat as $pro) {
-					$dem++;
-					if ($dem == 5) {
-						break;
-					} else {
-						?>
-    			<div class="col-md-6 col-lg-3 ftco-animate">
-    				<div class="product">
-    					<a href="product-single.php?id_pro=<?php echo $pro['id_pro'] ?>" class="img-prod"><img class="img-fluid" src="../Admin/upload/<?php echo $pro['image'] ?>  " alt="<?php echo $pro['name_pro'] ?>">
-    					<p class="price"><?php if (isset($pro['price_sale'])) { ?><span class="status"><?php echo round((100 * ($pro['price'] - $pro['price_sale'])) / $pro['price']); ?>%</span>	<?php } ?>
-              <div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="product-single.php?id_pro=<?php echo $pro['id_pro'] ?>"><?php echo $pro['name_pro'] ?></a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><?php if (isset($pro['price_sale'])) { ?><span class="mr-2 price-dc"><?php $price_sale = $pro['price'];
-									   $formatted_price = number_format($price_sale, 0, ',', '.');
-									   echo $formatted_price . ' ₫' ?></span> <span class="price-sale"><?php $price_sale = $pro['price_sale'];
-										   $formatted_price = number_format($price_sale, 0, ',', '.');
-										   echo $formatted_price . ' ₫' ?></span><?php } else { ?><span class="price-sale"><?php $price_sale = $pro['price'];
-												  $formatted_price = number_format($price_sale, 0, ',', '.');
-												  echo $formatted_price . ' ₫' ?></span> <?php } ?> </p>
-		    					</div>
-	    					</div>
-	    					<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="product-single.php?id_pro=<?php echo $pro['id_pro'] ?>" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-                    &nbsp;
-	    							<a href="wishlist.php?id_pro=<?php echo $pro['id_pro'] ?>" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-          <?php }
-				} ?>
+			<?php
+$select_cat = $get_data->select_product_cat($category);
+$dem = 0;
+foreach ($select_cat as $pro) {
+    $dem++;
+    if ($dem == 5) {
+        break;
+    } else {
+        ?>
+        <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="product">
+                <a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>" class="img-prod">
+                    <img class="img-fluid" src="../Admin/upload/<?php echo $pro['picture'] ?>" alt="<?php echo $pro['name_pet'] ?>">
+                    <div class="overlay"></div>
+                </a>
+                <div class="text py-3 pb-4 px-3 text-center">
+                    <h3>
+                        <a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>">
+                            <?php echo $pro['name_pet'] ?>
+                        </a>
+                    </h3>
+                    <div class="d-flex">
+                        <div class="pricing">
+                            <p class="price">
+                                <span class="price-sale">
+                                    <?php 
+                                    $price = $pro['price'];
+                                    $formatted_price = number_format($price, 0, ',', '.');
+                                    echo $formatted_price . ' ₫';
+                                    ?>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bottom-area d-flex px-3">
+                        <div class="m-auto d-flex">
+                            <a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                                <span><i class="ion-ios-menu"></i></span>
+                            </a>
+                            &nbsp;
+                            <a href="wishlist.php?id_pet=<?php echo $pro['id_pet'] ?>" class="heart d-flex justify-content-center align-items-center ">
+                                <span><i class="ion-ios-heart"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php 
+    }
+} 
+?>
+
     		</div>
     	</div>
     </section>

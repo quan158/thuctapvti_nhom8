@@ -253,50 +253,54 @@ if (isset($_SESSION['user'])) {
     	</div>
     	<div class="container">
     		<div class="row">
-    			<?php 
-            $select_pro = $get_data->select_product();
-			$dem = 0;
-				foreach ($select_pro as $pro) {
-					$dem++;
-					if ($dem == 9) {
-						break;
-					} else {
-						?>
-    			<div class="col-md-6 col-lg-3 ftco-animate">
-    				<div class="product">
-    					<a href="product-single.php?id_pro=<?php echo $pro['id_pro'] ?>" class="img-prod"><img class="img-fluid" src="../Admin/upload/<?php echo $pro['image'] ?>  " alt="<?php echo $pro['name_pro'] ?>">
-    					<p class="price"><?php if (isset($pro['price_sale'])) { ?><span class="status"><?php echo round((100 * ($pro['price'] - $pro['price_sale'])) / $pro['price']); ?>%</span>	<?php } ?>
-              <div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="product-single.php?id_pro=<?php echo $pro['id_pro'] ?>"><?php echo $pro['name_pro'] ?></a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><?php if (isset($pro['price_sale'])) { ?><span class="mr-2 price-dc"><?php $price_sale = $pro['price'];
-									   $formatted_price = number_format($price_sale, 0, ',', '.');
-									   echo $formatted_price . ' ₫' ?></span> <span class="price-sale"><?php $price_sale = $pro['price_sale'];
-										   $formatted_price = number_format($price_sale, 0, ',', '.');
-										   echo $formatted_price . ' ₫' ?></span><?php } else { ?><span class="price-sale"><?php $price_sale = $pro['price'];
-												  $formatted_price = number_format($price_sale, 0, ',', '.');
-												  echo $formatted_price . ' ₫' ?></span> <?php } ?> </p>
-		    					</div>
-	    					</div>
-	    					<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="product-single.php?id_pro=<?php echo $pro['id_pro'] ?>" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-                    &nbsp;
-	    							<a href="wishlist.php?id_pro=<?php echo $pro['id_pro'] ?>" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-          <?php }
-				} ?>
+        <?php 
+$select_pro = $get_data->select_product();
+$dem = 0;
+foreach ($select_pro as $pro) {
+    $dem++;
+    if ($dem == 9) {
+        break;
+    } else {
+        ?>
+        <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="product">
+                <a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>" class="img-prod">
+                    <img class="img-fluid" src="../Admin/upload/<?php echo $pro['image'] ?>" alt="<?php echo $pro['name_pet'] ?>">
+                    <div class="overlay"></div>
+                </a>
+                <div class="text py-3 pb-4 px-3 text-center">
+                    <h3><a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>"><?php echo $pro['name_pet'] ?></a></h3>
+                    <div class="d-flex">
+                        <div class="pricing">
+                            <p class="price">
+                                <span class="price-sale">
+                                    <?php 
+                                    $price = $pro['price'];
+                                    $formatted_price = number_format($price, 0, ',', '.');
+                                    echo $formatted_price . ' ₫'; 
+                                    ?>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bottom-area d-flex px-3">
+                        <div class="m-auto d-flex">
+                            <a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                                <span><i class="ion-ios-menu"></i></span>
+                            </a>
+                            &nbsp;
+                            <a href="wishlist.php?id_pet=<?php echo $pro['id_pet'] ?>" class="heart d-flex justify-content-center align-items-center ">
+                                <span><i class="ion-ios-heart"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php 
+    }
+}
+?>
     		</div>
     	</div>
     </section>
