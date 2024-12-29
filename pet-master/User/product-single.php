@@ -272,7 +272,7 @@ img {
 						?>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>" class="img-prod"><img class="img-fluid" src="../Admin/upload/<?php echo $pro['image'] ?>  " alt="<?php echo $pro['name_pet'] ?>">
+    					<a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>" class="img-prod"><img class="img-fluid" src="../Admin/upload/<?php echo $pro['picture'] ?>  " alt="<?php echo $pro['name_pet'] ?>">
     					<p class="price"><?php if (isset($pro['price_sale'])) { ?><span class="status"><?php echo round((100 * ($pro['price'] - $pro['price_sale'])) / $pro['price']); ?>%</span>	<?php } ?>
               <div class="overlay"></div>
     					</a>

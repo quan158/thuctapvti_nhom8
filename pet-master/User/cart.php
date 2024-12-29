@@ -95,10 +95,10 @@ if(isset($_GET['del'])){
     $product = []; // Khởi tạo mảng $product trước khi sử dụng
     
     foreach($_SESSION['cart'] as $cart_Item){
-        if($cart_Item['id_pro'] != $id_pro ){
+        if($cart_Item['id_pet'] != $id_pro ){
                  $product[] = array(
-                    'id_pro' => $cart_Item['id_pro'],
-                    'name' => $cart_Item['name'],
+                    'id_pet' => $cart_Item['id_pet'],
+                    'name' => $cart_Item['name_pet'],
                     'quantity' => $cart_Item['quantity'],
                     'picture' => $cart_Item['picture'],
                     'price' => $cart_Item['price'],
@@ -131,10 +131,10 @@ if(isset($_GET['minus'])){
     $product = []; // Khởi tạo mảng $product trước khi sử dụng
     
     foreach($_SESSION['cart'] as $cart_Item){
-        if($cart_Item['id_pro'] != $id_pro ){
+        if($cart_Item['id_pet'] != $id_pro ){
                  $product[] = array(
-                    'id_pro' => $cart_Item['id_pro'],
-                    'name' => $cart_Item['name'],
+                    'id_pet' => $cart_Item['id_pet'],
+                    'name' => $cart_Item['name_pet'],
                     'quantity' => $cart_Item['quantity'],
                     'picture' => $cart_Item['picture'],
                     'price' => $cart_Item['price'],
@@ -145,15 +145,15 @@ if(isset($_GET['minus'])){
                   $newQuantity =$cart_Item['quantity']-1;
         if ($newQuantity > 0) {
           $product[] = array(
-            'id_pro' => $cart_Item['id_pro'],
-            'name' => $cart_Item['name'],
+            'id_pet' => $cart_Item['id_pet'],
+            'name' => $cart_Item['name_pet'],
             'quantity' => $newQuantity,
             'picture' => $cart_Item['picture'],
             'price' => $cart_Item['price'],
             'total' => $cart_Item['price'] * $newQuantity
           );
         } else {
-          echo "<script>window.location=('cart.php?id_pro=".$cart_Item['id_pro']."')</script";
+          echo "<script>window.location=('cart.php?id_pet=".$cart_Item['id_pet']."')</script";
         }
         }
     }
@@ -175,10 +175,10 @@ if (isset($_GET['plus'])) {
     $product = []; // Khởi tạo mảng $product trước khi sử dụng
     
     foreach($_SESSION['cart'] as $cart_Item){
-        if($cart_Item['id_pro'] != $id_pro){
+        if($cart_Item['id_pet'] != $id_pro){
                  $product[] = array(
-                    'id_pro' => $cart_Item['id_pro'],
-                    'name' => $cart_Item['name'],
+                    'id_pet' => $cart_Item['id_pet'],
+                    'name' => $cart_Item['name_pet'],
                     'quantity' => $cart_Item['quantity'],
                     'picture' => $cart_Item['picture'],
                     'price' => $cart_Item['price'],
@@ -188,8 +188,8 @@ if (isset($_GET['plus'])) {
         else{
           $newQuantity =$cart_Item['quantity']+1;
                  $product[] = array(
-                    'id_pro' => $cart_Item['id_pro'],
-                    'name' => $cart_Item['name'],
+                    'id_pet' => $cart_Item['id_pet'],
+                    'name' => $cart_Item['name_pet'],
                     'quantity' => $newQuantity,
                     'picture' => $cart_Item['picture'],
                     'price' => $cart_Item['price'],
@@ -257,12 +257,12 @@ if (isset($_GET['plus'])) {
                   foreach ($select_cart as $se_cart):
                     ?>
 						      <tr class="text-center">
-						        <td class="product-remove"><a href="cart.php?del=<?php echo $se_cart['id_pro'] ?>"><span class="bi bi-trash">x</span></a></td>
+						        <td class="product-remove"><a href="cart.php?del=<?php echo $se_cart['id_pet'] ?>"><span class="bi bi-trash">x</span></a></td>
 						        
 						        <td class="image-prod"><div class="img" style="background-image: url('../Admin/upload/<?php echo ($se_cart['picture']); ?>');"></div></td>
 						        
 						        <td class="product-name">
-						        	<h3><?php echo $se_cart['name_pro'] ?></h3>
+						        	<h3><?php echo $se_cart['name_pet'] ?></h3>
 						        </td>
 						        
 						        <td class="price"><?php $price = $se_cart['price'];
@@ -271,9 +271,9 @@ if (isset($_GET['plus'])) {
 						        
 						        <td class="quantity">
 						    <div class="d-flex align-items-center">
-                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2" data-action="minus"><a href="cart.php?minus=<?php echo $se_cart['id_pro'] ?>"><i class="ion-ios-remove"></i></a></button>
-                            <input name="quantity[<?php echo $se_cart['id_pro']; ?>]" value="<?php echo $se_cart['quantity_order'] ?>" type="number" class="form-control input-number">
-                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2" data-action="plus"><a href="cart.php?plus=<?php echo $se_cart['id_pro'] ?>"><i class="ion-ios-add"></a></i></button>
+                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2" data-action="minus"><a href="cart.php?minus=<?php echo $se_cart['id_pet'] ?>"><i class="ion-ios-remove"></i></a></button>
+                            <input name="quantity[<?php echo $se_cart['id_pet']; ?>]" value="<?php echo $se_cart['quantity_order'] ?>" type="number" class="form-control input-number">
+                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2" data-action="plus"><a href="cart.php?plus=<?php echo $se_cart['id_pet'] ?>"><i class="ion-ios-add"></a></i></button>
                         </div>
 					          </td>
 						        
@@ -288,7 +288,7 @@ if (isset($_GET['plus'])) {
 									foreach ($_SESSION['cart'] as $se_cart):
                     ?>
 						      <tr class="text-center">
-						        <td class="product-remove"><a href="cart.php?del=<?php echo $se_cart['id_pro'] ?>"><span class="bi bi-trash">x</span></a></td>
+						        <td class="product-remove"><a href="cart.php?del=<?php echo $se_cart['id_pet'] ?>"><span class="bi bi-trash">x</span></a></td>
 						        
 						        <td class="image-prod"><div class="img" style="background-image: url('../Admin/upload/<?php echo ($se_cart['picture']); ?>');"></div></td>
 						        
@@ -302,9 +302,9 @@ if (isset($_GET['plus'])) {
 						        
 						        <td class="quantity">
 						    <div class="d-flex align-items-center">
-                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2" data-action="minus"><a href="cart.php?minus=<?php echo $se_cart['id_pro'] ?>"><i class="ion-ios-remove"></i></a></button>
+                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2" data-action="minus"><a href="cart.php?minus=<?php echo $se_cart['id_pet'] ?>"><i class="ion-ios-remove"></i></a></button>
                             <input name="quantity[<?php echo $se_cart['id_pro']; ?>]" value="<?php echo $se_cart['quantity'] ?>" type="number" class="form-control input-number">
-                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2" data-action="plus"><a href="cart.php?plus=<?php echo $se_cart['id_pro'] ?>"><i class="ion-ios-add"></a></i></button>
+                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2" data-action="plus"><a href="cart.php?plus=<?php echo $se_cart['id_pet'] ?>"><i class="ion-ios-add"></a></i></button>
                         </div>
 					          </td>
 						        
