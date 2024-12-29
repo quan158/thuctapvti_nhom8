@@ -23,7 +23,11 @@ include("connect.php");
     public function select_user_top()
     {
         global $conn;
-        $sql = "SELECT * FROM `user` ORDER BY `user`.`id_user` DESC";
+        $sql = "SELECT * 
+                FROM `user` 
+                ORDER BY `created_at` DESC 
+                LIMIT 10;
+                ";
         $run = mysqli_query($conn, $sql);
         return $run;
     }
@@ -98,7 +102,79 @@ include("connect.php");
         $run = mysqli_query($conn, $sql);
         return $run;
     }
-    //get order
+
+    //add pet
+    public function insert_pet($name_pet, $category, $quantity, $gender, $price, $picture, $description) {
+        global $conn; // Kết nối với cơ sở dữ liệu
+
+        $sql = "INSERT INTO pet (name_pet, category, quantity, gender, price, picture, description) 
+                VALUES ('$name_pet', '$category', $quantity, '$gender', $price, '$picture', '$description')";
+        mysqli_query($conn, $sql); 
+        $lastInsertId = mysqli_insert_id($conn);
+        return $lastInsertId;
+    }
+
+
+    //get all pets
+    public function select_all_pets(){
+        global $conn;
+        $sql = "SELECT * FROM pet";
+        $run = mysqli_query($conn, $sql);
+        return $run;
+    }
+    public function select_pet($id_pet){
+        global $conn;
+        $sql = "SELECT * FROM pet WHERE id_pet =$id_pet";
+        $run = mysqli_query($conn, $sql);
+        return $run;
+    }
+
+    //delete pet
+    public function delete_pet($id_pet) {
+        global $conn; // Kết nối với cơ sở dữ liệu
+        $sql = "DELETE FROM pet WHERE id_pet = $id_pet"; // Sử dụng trực tiếp giá trị id_pet trong câu lệnh SQL
+        return mysqli_query($conn, $sql); // Thực thi câu lệnh SQL
+    }
+
+
+    //update pet
+    public function update_pet($id_pet, $name_pet, $category, $quantity, $gender, $price, $picture, $description)
+    {
+        global $conn;
+        $sql = "UPDATE pet 
+                SET name_pet = '$name_pet', 
+                    category = '$category', 
+                    quantity = '$quantity', 
+                    gender = '$gender', 
+                    price = '$price', 
+                    picture = '$picture', 
+                    description = '$description' 
+                WHERE id_pet = '$id_pet'";
+        $run = mysqli_query($conn, $sql);
+        return $run;
+    }
+
+
+
+    //insert image library
+    public function insert_image($id_pet, $path) {
+        global $conn; // Kết nối với cơ sở dữ liệu
+        $sql = "INSERT INTO image_library (id_pet, path) VALUES ($id_pet, '$path')";
+        
+        $run = mysqli_query($conn, $sql);
+        
+        return $run; // Trả về kết quả thực thi câu lệnh
+    }
+
+
+    //delete pet's image
+    public function delete_image($id_pro){
+        global $conn;
+        $sql = "DELETE FROM `image_library` WHERE id_pro = $id_pro";
+        $run = mysqli_query($conn, $sql);
+        return $run;
+    }
+
     public function select_order(){
         global $conn;
         $sql = "SELECT * FROM order_pro";
@@ -119,5 +195,22 @@ include("connect.php");
         $run = mysqli_query($conn, $sql);
         return $run;
     }
+
+    public function select_sale(){
+        global $conn;
+        $sql = "SELECT * FROM `order_pro` WHERE status = N'Hoàn thành'";
+        $run = mysqli_query($conn, $sql);
+        return $run;
+    }
+    public function revenue(){
+        global $conn;
+        $sql = "SELECT month(date) as month, SUM(total_order) as total 
+                FROM order_pro 
+                WHERE status = N'Hoàn thành' 
+                GROUP BY month(date)";
+        $run = mysqli_query($conn,$sql);
+        return $run;
+    }
+
     }
 ?>

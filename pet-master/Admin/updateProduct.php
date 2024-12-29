@@ -11,7 +11,7 @@ if (empty($_SESSION['user'])) {
 <html lang="en">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Update Category</title>
+    <title>Product</title>
     <meta
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
       name="viewport"
@@ -84,53 +84,52 @@ if (empty($_SESSION['user'])) {
             <ul class="nav nav-secondary">
               <li class="nav-item">
                 <a
-                  data-bs-toggle="collapse"
                   href="index.php"
                   class="collapsed"
                   aria-expanded="false"
                 >
                   <i class="fas fa-home"></i>
-                  <p>Dashboard</p>
+                  <p>Trang chủ</p>
                 </a>
               </li>
               <li class="nav-section">
                 <span class="sidebar-mini-icon">
                   <i class="fa fa-ellipsis-h"></i>
                 </span>
-                <h4 class="text-section">Components</h4>
+                <h4 class="text-section">Quản lý</h4>
               </li>
                     <li class="nav-item">
                       <a href="Product.php">
                         <i class="icon-book-open"></i>
-                        <span class="sub-item">Product</span>
+                        <span class="sub-item">Sản phẩm</span>
                         
                       </a>
                     </li>
                     <li class="nav-item">
                       <a href="Category.php">
                         <i class="icon-menu"></i>
-                        <span class="sub-item">Category</span>
+                        <span class="sub-item">Danh mục</span>
                         
                       </a>
                     </li>
                     <li class="nav-item">
                       <a href="Contact.php">
                         <i class="icon-envelope"></i>
-                        <span class="sub-item">Contact</span>
+                        <span class="sub-item">Liên hệ</span>
                         
                       </a>
                     </li>
                     <li class="nav-item">
                       <a href="Order.php">
                         <i class="icon-calendar"></i>
-                        <span class="sub-item">Order</span>
+                        <span class="sub-item">Đơn đặt hàng</span>
                         
                       </a>
                     </li>
                     <li class="nav-item">
                       <a href="Report.php">
                         <i class="icon-chart"></i>
-                        <span class="sub-item">Report</span>
+                        <span class="sub-item">Báo cáo</span>
                         
                       </a>
                     </li>
@@ -271,7 +270,7 @@ if (empty($_SESSION['user'])) {
                         </div>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="logout.php">Logout</a>
+                        <a class="dropdown-item" href="logout.php">Đăng xuất</a>
                       </li>
                     </div>
                   </ul>
@@ -292,52 +291,124 @@ if (empty($_SESSION['user'])) {
         <div class="col-md-9">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title">Cập nhật danh mục</div>
+                    <div class="card-title">Cập nhật sản phẩm</div>
                 </div>
                 <div class="card-body">
                     <?php
-                    if (isset($_GET['old_name'])) {
-                        $old_name = $_GET['old_name'];
-                        $select_cat_id = $get_data->select_cat($old_name);
-                        if ($select_cat_id) {
-                            foreach ($select_cat_id as $se_cat) { ?>
+                    if (isset($_GET['id_pet'])) {
+                        $id_pet = $_GET['id_pet'];
+                        $select_pet_id = $get_data->select_pet($id_pet);
+                        if ($select_pet_id) {
+                            foreach ($select_pet_id as $pet) { ?>
                                 <div class="row">
-                                    <form method="post" enctype="multipart/form-data">
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <label>Tên danh mục</label>
-                                                <input type="text" value="<?php echo $se_cat['name_cat']; ?>" class="form-control" name="txtname" placeholder="" />
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <label>Mô tả</label>
-                                                <textarea class="form-control" rows="3" name="txtdes" required><?php echo $se_cat['description']; ?></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer border-0">
-                                            <button type="submit" name="txtsub" class="btn btn-primary">Update</button>
-                                        </div>
-                                    </form>
+                                    <form id="petForm" method="post" enctype="multipart/form-data" novalidate>
+                                    <input type="hidden" name="id_pet" value="<?php echo $pet['id_pet']; ?>">
+                                    <div class="mb-3">
+                                        <label for="name_pet" class="form-label">Tên thú cưng</label>
+                                        <input type="text" class="form-control" id="name_pet" name="name_pet" placeholder="Nhập tên thú cưng" 
+                                              value="<?php echo $pet['name_pet']; ?>" required>
+                                        <div class="invalid-feedback">Vui lòng nhập tên thú cưng.</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="category" class="form-label">Danh mục</label>
+                                        <select name="category" class="form-control" required>
+                                            <option value="" disabled>Chọn danh mục</option>
+                                            <?php
+                                            $select_cats = $get_data->select_cats();
+                                            foreach ($select_cats as $cats): ?>
+                                                <option value="<?php echo $cats['name_cat']; ?>" 
+                                                    <?php if ($cats['name_cat'] === $pet['category']) echo 'selected'; ?>>
+                                                    <?php echo $cats['name_cat']; ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                        <div class="invalid-feedback">Vui lòng nhập danh mục.</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="quantity" class="form-label">Số lượng</label>
+                                        <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Nhập số lượng" 
+                                              value="<?php echo $pet['quantity']; ?>" required>
+                                        <div class="invalid-feedback">Vui lòng nhập số lượng.</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="gender" class="form-label">Giới tính</label>
+                                        <select class="form-control" id="gender" name="gender" required>
+                                            <option value="" disabled>Chọn giới tính</option>
+                                            <option value="Male" <?php if ($pet['gender'] == 'Male') echo 'selected'; ?>>Đực</option>
+                                            <option value="Female" <?php if ($pet['gender'] == 'Female') echo 'selected'; ?>>Cái</option>
+                                        </select>
+                                        <div class="invalid-feedback">Vui lòng chọn giới tính.</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="price" class="form-label">Giá</label>
+                                        <input type="number" class="form-control" id="price" name="price" placeholder="Nhập giá (VNĐ)" 
+                                              value="<?php echo $pet['price']; ?>" required>
+                                        <div class="invalid-feedback">Vui lòng nhập giá.</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="picture" class="form-label">Ảnh</label>
+                                        <input type="file" class="form-control" id="picture" name="picture" accept=".jpg, .jpeg, .png">
+                                        <div class="invalid-feedback">Vui lòng tải lên ảnh.</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="images" class="form-label">Thư viện ảnh</label>
+                                        <input type="file" class="form-control" id="images" name="albumImages[]" accept=".jpg, .jpeg, .png" multiple>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="description" class="form-label">Mô tả</label>
+                                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Nhập mô tả" required>
+                                            <?php echo $pet['description']; ?>
+                                        </textarea>
+                                        <div class="invalid-feedback">Vui lòng nhập mô tả.</div>
+                                    </div>
+                                    <div class="modal-footer border-0">
+                                        <button type="submit" name="update_pet" class="btn btn-primary">Cập nhật</button>
+                                    </div>
+                                </form>
                                 </div>
                             <?php }
                         } else {
-                            echo "Category not found.";
+                            echo "Product not found.";
                         }
                     } else {
-                        echo "Category ID is not defined.";
+                        echo "Product ID is not defined.";
                     }
 
-                    if (isset($_POST['txtsub'])) {
-                        $update = $get_data->update_cat(
-                            $old_name,
-                            $_POST['txtname'],
-                            $_POST['txtdes']
+                    if (isset($_POST['update_pet'])) {
+                        $update = $get_data->update_pet(
+                            $_GET['id_pet'],
+                            $_POST['name_pet'],
+                            $_POST['category'],
+                            $_POST['quantity'],
+                            $_POST['gender'],
+                            $_POST['price'],
+                            $_FILES['picture']['name'],
+                            $_POST['description']
+                            
                         );
 
                         if ($update) {
-                            echo "<script>alert('Cập nhật phân loại thành công'); window.location=('Category.php');</script>";
+                            $mainImage = $_FILES['picture']['name'];
+
+                            // Handle main product image upload
+                            if (!move_uploaded_file($_FILES['picture']['tmp_name'], 'upload/' . $mainImage)) {
+                                echo "Error uploading main image<br>";
+                            }
+                            $uploadDirectory = 'upload/';
+                        $delete_img = $get_data->delete_image($_GET['id_pet']);
+                            foreach ($_FILES['albumImages']['name'] as $key => $name) {
+                                $tmpName = $_FILES['albumImages']['tmp_name'][$key];
+                                $filePath = $uploadDirectory . basename($name);
+
+                                // Insert image details into database with the correct product ID
+                                $upload = $get_data->insert_image($_GET['id_pet'], $name);
+
+                                if (!move_uploaded_file($tmpName, $filePath)) {
+                                    echo "Error uploading $name<br>";
+                                }
+                            }
+
+                            echo "<script>alert('Cập nhật sản phẩm thành công'); window.location=('Product.php');</script>";
                         } else {
                             echo "<script>alert('Cập nhật thất bại')</script>";
                         }
