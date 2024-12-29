@@ -64,14 +64,8 @@ img {
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item"><a href="index.php" class="nav-link">Trang chủ</a></li>
-	          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cửa hàng</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="shop.php">Cửa hàng</a>
-              	<a class="dropdown-item" href="wishlist.php">Danh sách yêu thích</a>
-              </div>
-            </li>
-	          <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="shop.php" class="nav-link">Cửa hàng</a></li>
+	          <li class="nav-item"><a href="about.php" class="nav-link">Về chúng tôi</a></li>
 	          <li class="nav-item"><a href="blog.php" class="nav-link">Tin tức</a></li>
 	          <li class="nav-item"><a href="contact.php" class="nav-link">Liên hệ</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[<?php echo $count;?>]</a></li>
