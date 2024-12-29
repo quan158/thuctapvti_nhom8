@@ -112,7 +112,7 @@ if (isset($_SESSION['user'])) {
                         <?php 
                         $select_add = $get_data->select_address($_SESSION['user']);
                         foreach($select_add as $se_add): ?>
-                            <option value="<?php echo $se_add['address']; ?>" data-name="<?php echo $se_add['name_custommer']; ?>" data-phone="<?php echo $se_add['phone']; ?>" data-address="<?php echo $se_add['address']; ?>">
+                            <option value="<?php echo $se_add['address']; ?>" data-name="<?php echo $se_add['name']; ?>" data-phone="<?php echo $se_add['phone']; ?>" data-address="<?php echo $se_add['address']; ?>">
                                 <?php echo $se_add['address']; ?>
                             </option>
                         <?php endforeach; ?>
@@ -203,8 +203,8 @@ if (isset($_SESSION['user'])) {
 				  <?php
           foreach ($select_cart as $se): ?>
                   <p class="d-flex">
-                    <span><img width="100px" height="100px" src="../Admin/upload/<?php echo $se['picture'] ?>" alt="<?php echo $se['name_pro'] ?>"></span>
-                    <span><?php echo $se['name_pro'] ?><br>
+                    <span><img width="100px" height="100px" src="../Admin/upload/<?php echo $se['picture'] ?>" alt="<?php echo $se['name_pet'] ?>"></span>
+                    <span><?php echo $se['name_pet'] ?><br>
 				<span>Số lượng: <?php echo $se['quantity_order'] ?></span></span>
                   </p>
 				  <hr>
@@ -270,7 +270,7 @@ if (isset($_SESSION['user'])) {
 		if ($insert) {
       if (isset($_SESSION['user'])) {
         foreach ($select_cart as $se) {
-          $insert_order = $get_data->insert_Order_Detail($insert, $se['id_pro'], $se['name_pro'], $se['quantity_order'], $se['total']);
+          $insert_order = $get_data->insert_Order_Detail($insert, $se['id_pet'], $se['name_pro'], $se['quantity_order'], $se['total']);
         }
         if ($insert_order) {
           $delete = $get_data->delete_All_Cart($_SESSION['user']);
@@ -279,7 +279,7 @@ if (isset($_SESSION['user'])) {
         }
       }else{
         foreach ($_SESSION['cart'] as $se) {
-          $insert_order = $get_data->insert_Order_Detail($insert, $se['id_pro'], $se['name'], $se['quantity'], $se['total']);
+          $insert_order = $get_data->insert_Order_Detail($insert, $se['id_pet'], $se['name_pro'], $se['quantity'], $se['total']);
         }
         if ($insert_order) {
           session_destroy();
