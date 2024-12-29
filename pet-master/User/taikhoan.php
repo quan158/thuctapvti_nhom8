@@ -219,7 +219,7 @@ if (isset($_SESSION['user'])) {
                     <tbody>
                       <?php foreach ($select_add as $se_add): ?>
                         <tr>
-                            <td><?php echo $se_add['name_custommer'] ?></td>
+                            <td><?php echo $se_add['name'] ?></td>
                             <td><?php echo $se_add['phone'] ?></td>
                             <td><?php echo $se_add['address'] ?></td>
                           
