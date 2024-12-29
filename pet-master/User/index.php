@@ -132,7 +132,7 @@ if (isset($_SESSION['user'])) {
 	        </div>
 	      </div>
 
-	      <div class="slider-item" style="background-image: url(images/banner3.jpg);">
+	      <div class="slider-item" style="background-image: url(images/bannercho.jpg);">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
