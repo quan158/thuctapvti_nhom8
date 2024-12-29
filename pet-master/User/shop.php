@@ -168,131 +168,108 @@ if (isset($_SESSION['user'])) {
       </div>
     </div>
 
-    <section class="ftco-section">
+<section class="ftco-section">
     <div class="container">
         <div class="row">
-            <!-- Thanh tìm kiếm ở trên cùng -->
+            <!-- Thanh tìm kiếm và danh mục -->
             <div class="col-md-3 mb-5">
                 <div class="search-container">
-                    <form action="search.php" method="GET">
-                        <input type="search" name="query" placeholder="Tìm kiếm">
+                    <form method="POST">
+                        <input type="text" name="query" placeholder="Tìm kiếm">
+                        <input type="submit" name="search" id="">
                     </form>
+                    <?php
+                    if(isset($_POST['search'])){
+                      $search = $_POST['query'];
+                      if(!empty($search)){
+                        echo "<script>window.location=('shop.php?search=$search');</script>";
+                      }
+                    } ?>
                 </div>
-
                 <h3>DANH MỤC</h3>
                 <table class="product-category">
-                    
-                    <?php
-                    
+                  <?php
+                  // Lấy danh mục hiện tại từ URL hoặc mặc định là "All"
+                  $current_cat = isset($_GET['cat']) ? $_GET['cat'] : 'All';
 
-                    // Get the current category from the URL
-                    $current_cat = isset($_GET['cat']) ? $_GET['cat'] : 'All';
+                  // Lấy danh sách danh mục từ cơ sở dữ liệu
+                  $categories = $get_data->select_cat_list();
 
-                    // Fetch categories using the select_cat_list function
-                    $categories = $get_data->select_cat_list();
+                  // Kiểm tra nếu có danh mục nào được tìm thấy
+                  if ($categories->num_rows > 0) {
+                      // Duyệt qua từng danh mục
+                      while ($row = $categories->fetch_assoc()) {
+                          $category_name = htmlspecialchars($row['name_cat']); // Xử lý dữ liệu đầu ra an toàn
+                          $active_class = ($current_cat == $category_name) ? 'active' : '';
+                          echo "
+                          <tr class=\"$active_class\">
+                              <td><a href=\"shop.php?cat=$category_name\">$category_name</a></td>
+                          </tr>";
+                      }
+                  } else {
+                      // Hiển thị thông báo nếu không tìm thấy danh mục nào
+                      echo '<tr><td>Không tìm thấy danh mục</td></tr>';
+                  }
+                  ?>
+              </table>
 
-                    // Loop through the categories and generate table rows
-                    if ($categories->num_rows > 0) {
-                        while($row = $categories->fetch_assoc()) {
-                            $category_name = $row['name_cat'];
-                            echo '<tr class="' . ($current_cat == $category_name ? 'active' : '') . '">';
-                            echo '<td><a href="shop.php?cat=' . $category_name . '">' . $category_name . '</a></td>';
-                            echo '</tr>';
-                        }
-                    } else {
-                        echo '<tr><td>No categories found</td></tr>';
-                    }
-                    ?>
-                </table>
             </div>
-            
 
-            <!-- Sản phẩm hiển thị bên phải -->
+            <!-- Sản phẩm hiển thị -->
             <div class="col-md-9 mb-5">
                 <div class="row">
-                    <?php 
-                    if (!isset($_GET["cat"])) {
-                        $select_pro = $get_data->select_product();
-                        foreach ($select_pro as $pro) {
-                            ?>
-                            <div class="col-md-6 col-lg-3 ftco-animate">
-                                <div class="product">
-                                    <a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>" class="img-prod">
-                                        <img class="img-fluid" src="../Admin/upload/<?php echo $pro['picture'] ?>" alt="<?php echo $pro['name_pet'] ?>">
-                
-                                    </a>
-                                    <div class="text py-3 pb-4 px-3 text-center">
-                                        <h3><a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>"><?php echo $pro['name_pet'] ?></a></h3>
-                                        <div class="d-flex">
-                                            <div class="pricing">
-                                                <p class="price"><?php if (isset($pro['price_sale'])) { ?><span class="mr-2 price-dc"><?php $price_sale = $pro['price'];
-                                                    $formatted_price = number_format($price_sale, 0, ',', '.');
-                                                   
-                                                    echo $formatted_price . ' ₫' ?></span><?php } else { ?><span class="price-sale"><?php $price_sale = $pro['price'];
-                                                    $formatted_price = number_format($price_sale, 0, ',', '.');
-                                                    echo $formatted_price . ' ₫' ?></span> <?php } ?> </p>
-                                            </div>
-                                        </div>
-                                        <div class="bottom-area d-flex px-3">
-                                            <div class="m-auto d-flex">
-                                                <a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-                                                    <span><i class="ion-ios-menu"></i></span>
-                                                </a>
-                                                &nbsp;
-                                                <a href="wishlist.php?id_pet=<?php echo $pro['id_pet'] ?>" class="heart d-flex justify-content-center align-items-center ">
-                                                    <span><i class="ion-ios-heart"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <?php
+                    if (isset($_GET['search'])) {
+                      $products = $get_data->search($_GET['search']);
+                      foreach ($products as $pro) {
+                        ?>
+                      <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="product">
+                                <a href="product-single.php?id_pet=<?php echo $pro['id_pet']; ?>" class="img-prod">
+                                    <img class="img-fluid" src="../Admin/upload/<?php echo $pro['picture']; ?>" alt="<?php echo $pro['name_pet']; ?>">
+                                </a>
+                                <div class="text py-3 text-center">
+                                    <h3>
+                                        <a href="product-single.php?id_pet=<?php echo $pro['id_pet']; ?>">
+                                            <?php echo $pro['name_pet']; ?>
+                                        </a>
+                                    </h3>
+                                    <p class="price">
+                                        <span class="price-sale"><?php echo number_format($pro['price'], 0, ',', '.'); ?> ₫</span>
+                                    </p>
                                 </div>
                             </div>
-                        <?php }
+                        </div>
+                    <?php }
                     } else {
-                        $select_pro = $get_data->select_product_cat($_GET['cat']);
-                        foreach ($select_pro as $pro) {
-                            ?>
-                            <div class="col-md-6 col-lg-3 ftco-animate">
-                                <div class="product">
-                                    <a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>" class="img-prod">
-                                        <img class="img-fluid" src="../Admin/upload/<?php echo $pro['picture'] ?>" alt="<?php echo $pro['name_pet'] ?>">
-                                        <p class="price"><?php if (isset($pro['price_sale'])) { ?><span class="status"><?php echo round((100 * ($pro['price'] - $pro['price_sale'])) / $pro['price']) ?>%</span> <?php } ?>
-                                            <div class="overlay"></div>
-                                    </a>
-                                    <div class="text py-3 pb-4 px-3 text-center">
-                                        <h3><a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>"><?php echo $pro['name_pet'] ?></a></h3>
-                                        <div class="d-flex">
-                                            <div class="pricing">
-                                                <p class="price"><?php if (isset($pro['price_sale'])) { ?><span class="mr-2 price-dc"><?php $price_sale = $pro['price'];
-                                                    $formatted_price = number_format($price_sale, 0, ',', '.');
-                                                    echo $formatted_price . ' ₫' ?></span> <span class="price-sale"><?php $price_sale = $pro['price_sale'];
-                                                    $formatted_price = number_format($price_sale, 0, ',', '.');
-                                                    echo $formatted_price . ' ₫' ?></span><?php } else { ?><span class="price-sale"><?php $price_sale = $pro['price'];
-                                                    $formatted_price = number_format($price_sale, 0, ',', '.');
-                                                    echo $formatted_price . ' ₫' ?></span> <?php } ?> </p>
-                                            </div>
-                                        </div>
-                                        <div class="bottom-area d-flex px-3">
-                                            <div class="m-auto d-flex">
-                                                <a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-                                                    <span><i class="ion-ios-menu"></i></span>
-                                                </a>
-                                                &nbsp;
-                                                <a href="#" class="heart d-flex justify-content-center align-items-center ">
-                                                    <span><i class="ion-ios-heart"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                      $products = isset($_GET['cat']) ? $get_data->select_product_cat($_GET['cat']) : $get_data->select_product();
+                      foreach ($products as $pro) {
+                        ?>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="product">
+                                <a href="product-single.php?id_pet=<?php echo $pro['id_pet']; ?>" class="img-prod">
+                                    <img class="img-fluid" src="../Admin/upload/<?php echo $pro['picture']; ?>" alt="<?php echo $pro['name_pet']; ?>">
+                                </a>
+                                <div class="text py-3 text-center">
+                                    <h3>
+                                        <a href="product-single.php?id_pet=<?php echo $pro['id_pet']; ?>">
+                                            <?php echo $pro['name_pet']; ?>
+                                        </a>
+                                    </h3>
+                                    <p class="price">
+                                        <span class="price-sale"><?php echo number_format($pro['price'], 0, ',', '.'); ?> ₫</span>
+                                    </p>
                                 </div>
                             </div>
-                        <?php }
+                        </div>
+                    <?php }
                     } ?>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 
 

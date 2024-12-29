@@ -685,6 +685,72 @@ pre {
 .offset-10 {
   margin-left: 83.33333%; }
 
+/* Tổng quan container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Sản phẩm */
+.product {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ảnh sản phẩm */
+.product .img-prod img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Tên sản phẩm */
+.product h3 {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* Giá sản phẩm */
+.product .price {
+    font-size: 14px;
+    color: #f00;
+    margin-bottom: 10px;
+}
+
+.product .price-dc {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 5px;
+}
+
+/* Nút chi tiết */
+.product .bottom-area a {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #fff;
+    background: #007bff;
+    transition: background 0.3s;
+}
+
+.product .bottom-area a:hover {
+    background: #0056b3;
+}
+
+
 .offset-11 {
   margin-left: 91.66667%; }
 

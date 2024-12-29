@@ -232,5 +232,11 @@ class data_user
         $run = mysqli_query($conn, $sql);
         return $run;
     }
+    public function search($productName){
+        global $conn;
+        $sql = "SELECT * FROM `pet` WHERE `name_pet` LIKE N'%$productName%';";
+        $run = mysqli_query($conn, $sql);
+        return $run;
+    }
 }
 ?>
