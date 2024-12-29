@@ -103,14 +103,14 @@ class data_user
     }
     public function insert_Cart($user,$id_pro,$name,$price,$pic,$num,$total){
         global $conn;
-        $sql = "INSERT INTO cart(`username`, `id_pro`, `name_pro`, `price`, `picture`, `quantity_order`, `total`) 
+        $sql = "INSERT INTO cart(`username`, `id_pet`, `name_pet`, `price`, `picture`, `quantity_order`, `total`) 
                 VALUES ('$user','$id_pro','$name','$price','$pic', '$num', '$total')";
         $run = mysqli_query($conn, $sql);
         return $run;
     }
     public function delete_Cart($id_pro,$user){
         global $conn;
-        $sql = "DELETE FROM cart WHERE id_pro = '$id_pro' and username='$user'";
+        $sql = "DELETE FROM cart WHERE id_pet = '$id_pro' and username='$user'";
         $run = mysqli_query($conn,$sql);
         return $run;
     }
@@ -122,25 +122,25 @@ class data_user
     }
     public function get_cart_item($id,$size){
         global $conn;
-        $sql = "SELECT * FROM cart where id_pro='$id' and size ='$size'";
+        $sql = "SELECT * FROM cart where id_pet='$id' and size ='$size'";
         $run = mysqli_query($conn, $sql);
         return $run;
     }
     public function update_cart_item($id_pro, $newQuantity,$total,$user){
         global $conn;
-        $sql="update cart set quantity_order ='$newQuantity', total='$total' where id_pro='$id_pro' and username='$user'";
+        $sql="update cart set quantity_order ='$newQuantity', total='$total' where id_pet='$id_pro' and username='$user'";
         $run=mysqli_query($conn,$sql);
         return $run;
     }
     public function select_cart_item($id_pro,$username){
         global $conn;
-         $sql = "SELECT * FROM cart WHERE username='$username' and id_pro='$id_pro'";
+         $sql = "SELECT * FROM cart WHERE username='$username' and id_pet='$id_pro'";
         $run = mysqli_query($conn, $sql);
         return $run;
     }
     public function insert_Order($username,$name,$phone,$add,$tatol,$pay,$status){
         global $conn;
-        $sql = "INSERT INTO `order_pro`( `userName`,`name_customer`, `phone`, `address`, `total_order`, `payment`, `status`) 
+        $sql = "INSERT INTO `order_pro`( `userName`,`name`, `phone`, `address`, `total_order`, `payment`, `status`) 
             values('$username','$name','$phone','$add','$tatol','$pay','$status')";
         $run=mysqli_query($conn,$sql);
         $lastInsertId = mysqli_insert_id($conn);
@@ -149,7 +149,7 @@ class data_user
     public function insert_Order_Detail($id_order, $id_pro, $name, $quantity, $total)
     {
         global $conn;
-        $sql = "insert into order_detail(id_order,id_pro,name_pro,quantity,total) 
+        $sql = "insert into order_detail(id_order,id_pet,name_pro,quantity,total) 
             values('$id_order','$id_pro','$name','$quantity','$total')";
         $run = mysqli_query($conn, $sql);
         return $run;
@@ -162,20 +162,20 @@ class data_user
     }
     public function insert_wishList($id_pro,$image,$name,$price,){
         global $conn;
-        $sql = "INSERT INTO `wish_list`(`id_pro`, `image`, `name_pro`, `price`)
+        $sql = "INSERT INTO `wish_list`(`id_pet`, `image`, `name_pro`, `price`)
          VALUES ('$id_pro','$image','$name','$price')";
         $run = mysqli_query($conn, $sql);
         return $run;
     }
     public function delete_wishList($id_pro){
         global $conn;
-        $sql = "DELETE FROM  wish_list where id_pro = '$id_pro'";
+        $sql = "DELETE FROM  wish_list where id_pet = '$id_pro'";
         $run = mysqli_query($conn, $sql);
         return $run;
     }
     public function insert_address($user,$name,$phone,$address){
         global $conn;
-        $sql = "INSERT INTO `address`(`username`, `name_custommer`, `phone`, `address`) VALUES ('$user','$name','$phone','$address')";
+        $sql = "INSERT INTO `address`(`username`, `name`, `phone`, `address`) VALUES ('$user','$name','$phone','$address')";
         $run = mysqli_query($conn,$sql);
         return $run;
     } 
@@ -215,13 +215,20 @@ class data_user
     public function update_add_id($user, $id, $name, $phone, $address)
     {
         global $conn;
-        $sql = "UPDATE address SET name_custommer='$name', phone='$phone', address='$address' WHERE username= '$user' and id_address='$id' ";
+        $sql = "UPDATE address SET name='$name', phone='$phone', address='$address' WHERE username= '$user' and id_address='$id' ";
         $run = mysqli_query($conn, $sql);
         return $run;
     }
     public function delete_add_id($user, $id){
         global $conn;
         $sql = "DELETE FROM address WHERE username= '$user' and id_address='$id'";
+        $run = mysqli_query($conn, $sql);
+        return $run;
+    }
+    public function select_cat_list()
+    {
+        global $conn;
+        $sql= "SELECT * FROM category";
         $run = mysqli_query($conn, $sql);
         return $run;
     }

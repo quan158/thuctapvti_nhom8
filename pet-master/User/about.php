@@ -15,36 +15,111 @@ if (isset($_SESSION['user'])) {
 <!DOCTYPE html>
 <html lang="en">
   <head>
-     <style>
-      .img-prod img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    aspect-ratio: 1/1; /* This will maintain a 1:1 aspect ratio */
+    <style>
+      /* Tùy chỉnh cho phần About */
+.ftco-section {
+    padding: 60px 0;
 }
 
-.product {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 300px; /* Adjust this to your preferred maximum width */
-    margin: auto;
+.bg-light {
+    background-color: #f4f4f4;
 }
 
-.product .img-prod {
-    width: 100%;
-    height: 300px; /* Adjust this to your preferred height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.img-2 {
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 50px; /* Dịch ảnh xuống 20px */
 }
 
-.product .img-prod img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.heading-section-bold h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2980b9;
 }
 
+.wrap-about {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.wrap-about p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.wrap-about .btn-primary {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.wrap-about .btn-primary:hover {
+    background-color: #1a67a2;
+}
+
+/* Hiệu ứng hover cho ảnh */
+.img-2:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Tùy chỉnh cho phần dịch vụ */
+.ftco-services {
+    padding: 60px 0;
+}
+
+.service-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+}
+
+.service-item .icon {
+    margin-bottom: 20px;
+}
+
+.service-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 30px;
+}
+
+.ftco-section .container {
+    max-width: 1200px;
+}
 
     </style>
     <title>Pet Kingdom</title>
@@ -95,7 +170,6 @@ if (isset($_SESSION['user'])) {
 	          <li class="nav-item"><a href="about.php" class="nav-link">Về chúng tôi</a></li>
 	          <li class="nav-item"><a href="blog.php" class="nav-link">Tin tức</a></li>
 	          <li class="nav-item"><a href="contact.php" class="nav-link">Liên hệ</a></li>
-          
 	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[<?php echo $count;?>]</a></li>
             <li class="nav-item dropdown">
               <?php if (isset($_SESSION["user"])) {
@@ -118,188 +192,100 @@ if (isset($_SESSION['user'])) {
 	    </div>
 	  </nav>
     <!-- END nav -->
-
-    <section id="home-section" class="hero">
-		  <div class="home-slider owl-carousel">
-	      <div class="slider-item" style="background-image: url(images/banner2.jpg);">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
-
-	            
-
-	          </div>
-	        </div>
-	      </div>
-
-	      <div class="slider-item" style="background-image: url(images/banner3.jpg);">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
-
-	            
-
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-    </section>
-
-    <section class="ftco-section">
-			<div class="container">
-				<div class="row no-gutters ftco-services">
-          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services mb-md-0 mb-4">
-              <div class="icon bg-color-1 active d-flex justify-content-center align-items-center mb-2">
-            		<span class="flaticon-shipped"></span>
-              </div>
-              <div class="media-body">
-    <h3 class="heading">Giao hàng miễn phí</h3>
-    <span>Cho đơn hàng trên 2.000.000</span>
-</div>
-</div>
-</div>
-<div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
-    <div class="media block-6 services mb-md-0 mb-4">
-        <div class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2">
-            <span class="flaticon-pet-house"></span>
-        </div>
-        <div class="media-body">
-            <h3 class="heading">Sản phẩm chất lượng</h3>
-            <span>Đảm bảo nguồn gốc rõ ràng</span>
-        </div>
-    </div>
-</div>
-<div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
-    <div class="media block-6 services mb-md-0 mb-4">
-        <div class="icon bg-color-3 d-flex justify-content-center align-items-center mb-2">
-            <span class="flaticon-pet-toy"></span>
-        </div>
-        <div class="media-body">
-            <h3 class="heading">Phụ kiện đa dạng</h3>
-            <span>Thức ăn, đồ chơi và dụng cụ chăm sóc</span>
-        </div>
-    </div>
-</div>
-<div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
-    <div class="media block-6 services mb-md-0 mb-4">
-        <div class="icon bg-color-4 d-flex justify-content-center align-items-center mb-2">
-            <span class="flaticon-veterinary"></span>
-        </div>
-        <div class="media-body">
-            <h3 class="heading">Hỗ trợ chuyên nghiệp</h3>
-            <span>Dịch vụ tư vấn và chăm sóc thú y</span>
-        </div>
-    </div>
-</div>
-
-            </div>      
+    <div class="hero-wrap hero-bread" style="background-image: url('images/banner2.jpg');">
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Trang chủ</a></span> <span>Về chúng tôi</span></p>
+            <h1 class="mb-0 bread">Về chúng tôi</h1>
           </div>
         </div>
-			</div>
-		</section>
+      </div>
+    </div>
+<br>   
+<section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
+    <div class="container">
+        <div class="row">
+            <!-- Phần hình ảnh -->
+            <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/cutemeo.jpg);">
+                <!-- Thay thế video bằng ảnh ở đây -->
+            </div>
 
-		<section class="ftco-section ftco-category ftco-no-pt">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8">
-						<div class="row">
-							<div class="col-md-6 order-md-last align-items-stretch d-flex">
-								<div class="category-wrap-2 ftco-animate img align-self-stretch d-flex" style="background-image: url(images/.jpg);">
-									<div class="text text-center">
-										<h2>Pet Kingdom</h2>
-										<p>hú cưng bé nhỏ, đáng yêu vô cùng,<br>
-                      Chạy nhảy vui đùa, yêu thương tràn ngập.<br>
-                      Lông mềm mượt, mắt sáng lung linh,<br>
-                      Bé cưng bên bạn, niềm vui chẳng rời</p>
-										<p><a href="shop.php" class="btn btn-primary">Mua ngay</a></p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(images/cho1.jpg);">
-									<div class="text px-3 py-1">
-										<h2 class="mb-0"><a href="shop.php?cat=Fruits">Chó</a></h2>
-									</div>
-								</div>
-								<div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(images/meo1.jpg);">
-									<div class="text px-3 py-1">
-										<h2 class="mb-0"><a href="shop.php?cat=Vegetables">Mèo</a></h2>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+            <!-- Phần văn bản -->
+            <div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
+                <div class="heading-section-bold mb-4 mt-md-5">
+                    <div class="ml-md-0">
+                        <h1 class="mb-4">Chào Mừng Bạn Đến Với Pet Kingdom</h1>
+                    </div>
+                </div>
+                <div class="pb-md-5">
+                    <p>Chào mừng bạn đến với <strong>Pet Kingdom</strong>, nơi bạn có thể tìm thấy những người bạn đồng hành đáng yêu và trung thành nhất cho gia đình mình.</p>
+                    <p>Chúng tôi cung cấp đa dạng các loại thú cưng từ chó, mèo, thỏ, chim đến cá, tất cả đều khỏe mạnh và đã được chăm sóc chu đáo. Chúng tôi cam kết cung cấp cho bạn những loài thú cưng khỏe mạnh, dễ thương và hoàn hảo cho ngôi nhà của bạn.</p>
+                    <p>Hãy đến và khám phá Pet Kingdom, nơi cung cấp tất cả những gì bạn cần cho thú cưng của mình, từ thức ăn, đồ chơi đến các dịch vụ chăm sóc thú cưng chuyên nghiệp.</p>
+                    <p><a href="shop.php" class="btn btn-primary">Mua Ngay</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-					<div class="col-md-4">
-						<div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(images/chim1.jpg);">
-							<div class="text px-3 py-1">
-								<h2 class="mb-0"><a href="shop.php?cat=Dried">Chim</a></h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-    <section class="ftco-section">
-    	<div class="container">
-				<div class="row justify-content-center mb-3 pb-3">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<span class="subheading">Sản phẩm nổi bật</span>
-            <h2 class="mb-4">Sản phẩm của chúng tôi</h2>
-            <p></p>
-          </div>
-        </div>   		
-    	</div>
-    	<div class="container">
-    		<div class="row">
-    			<?php 
-            $select_pro = $get_data->select_product();
-			$dem = 0;
-				foreach ($select_pro as $pro) {
-					$dem++;
-					if ($dem == 9) {
-						break;
-					} else {
-						?>
-    			<div class="col-md-6 col-lg-3 ftco-animate">
-    				<div class="product">
-    					<a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>" class="img-prod"><img class="img-fluid" src="../Admin/upload/<?php echo $pro['picture'] ?>  " alt="<?php echo $pro['name_pet'] ?>">
-    					<p class="price"><?php if (isset($pro['price_sale'])) { ?><span class="status"><?php echo round((100 * ($pro['price'] - $pro['price_sale'])) / $pro['price']); ?>%</span>	<?php } ?>
-              <div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="petduct-single.php?id_pet=<?php echo $pro['id_pet'] ?>"><?php echo $pro['name_pet'] ?></a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><?php if (isset($pro['price_sale'])) { ?><span class="mr-2 price-dc"><?php $price_sale = $pro['price'];
-									   $formatted_price = number_format($price_sale, 0, ',', '.');
-									   echo $formatted_price . ' ₫' ?></span> <span class="price-sale"><?php $price_sale = $pro['price_sale'];
-										   $formatted_price = number_format($price_sale, 0, ',', '.');
-										   echo $formatted_price . ' ₫' ?></span><?php } else { ?><span class="price-sale"><?php $price_sale = $pro['price'];
-												  $formatted_price = number_format($price_sale, 0, ',', '.');
-												  echo $formatted_price . ' ₫' ?></span> <?php } ?> </p>
-		    					</div>
-	    					</div>
-	    					<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="petduct-single.php?id_pet=<?php echo $pro['id_pet'] ?>" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-                    &nbsp;
-	    							<a href="wishlist.php?id_pet=<?php echo $pro['id_pet'] ?>" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-          <?php }
-				} ?>
-    		</div>
-    	</div>
-    </section>
+		
+<section class="ftco-section ftco-services bg-light" id="section-services">
+    <div class="container">
+        <div class="row justify-content-center py-5">
+            <div class="col-md-10 text-center">
+                <h2 class="mb-4">Dịch Vụ Chăm Sóc Thú Cưng Tại Pet Kingdom</h2>
+                <p class="mb-5">Chúng tôi cung cấp những dịch vụ chăm sóc thú cưng toàn diện, giúp bạn và thú cưng có những trải nghiệm tuyệt vời nhất.</p>
+                <div class="row">
+                    <!-- Dịch Vụ 1 -->
+                    <div class="col-md-3 d-flex justify-content-center">
+                        <div class="service-item text-center">
+                            <div class="icon">
+                                <img src="images/chamsoc" alt="Grooming" class="img-fluid">
+                            </div>
+                            <h3>Chăm Sóc Lông</h3>
+                            <p>Chúng tôi cung cấp dịch vụ chăm sóc lông cho thú cưng, giúp thú cưng của bạn luôn sạch sẽ và xinh đẹp.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dịch Vụ 2 -->
+                    <div class="col-md-3 d-flex justify-content-center">
+                        <div class="service-item text-center">
+                            <div class="icon">
+                                <img src="images/thamkham" alt="Vet" class="img-fluid">
+                            </div>
+                            <h3>Thăm Khám Thú Cưng</h3>
+                            <p>Đội ngũ bác sĩ chuyên nghiệp của chúng tôi luôn sẵn sàng thăm khám và chăm sóc sức khỏe cho thú cưng của bạn.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dịch Vụ 3 -->
+                    <div class="col-md-3 d-flex justify-content-center">
+                        <div class="service-item text-center">
+                            <div class="icon">
+                                <img src="images/dochoi.jpg" alt="Toys" class="img-fluid">
+                            </div>
+                            <h3>Đồ Chơi & Phụ Kiện</h3>
+                            <p>Chúng tôi cung cấp các loại đồ chơi và phụ kiện cho thú cưng, giúp chúng luôn vui vẻ và năng động.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dịch Vụ 4 -->
+                    <div class="col-md-3 d-flex justify-content-center">
+                        <div class="service-item text-center">
+                            <div class="icon">
+                                <img src="images/huanluyen" alt="Training" class="img-fluid">
+                            </div>
+                            <h3>Huấn Luyện Thú Cưng</h3>
+                            <p>Chúng tôi cung cấp các khóa huấn luyện thú cưng, giúp chúng phát triển kỹ năng và hành vi tốt hơn.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+		
     <section class="ftco-section testimony-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
@@ -382,36 +368,57 @@ if (isset($_SESSION['user'])) {
       </div>
     </section>
 
-    <hr>
+    <section class="ftco-section">
+			<div class="container">
+				<div class="row no-gutters ftco-services">
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-1 active d-flex justify-content-center align-items-center mb-2">
+            		<span class="flaticon-shipped"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Giao hàng miễn phí</h3>
+                <span>Cho hoá đơn trên 2.000.000</span>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2">
+            		<span class="flaticon-diet"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Luôn tươi</h3>
+                <span>Đầy đủ bao bì</span>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-3 d-flex justify-content-center align-items-center mb-2">
+            		<span class="flaticon-award"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Chất lượng cao</h3>
+                <span>An toàn thực phẩm</span>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-4 d-flex justify-content-center align-items-center mb-2">
+            		<span class="flaticon-customer-service"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Hỗ trợ</h3>
+                <span>Hỗ trợ 24/7</span>
+              </div>
+            </div>      
+          </div>
+        </div>
+			</div>
+		</section>
 
-		<section class="ftco-section ftco-partner">
-    	<div class="container">
-			      	<div class="row">
-      		<div class="mouse">
-						<a href="#" class="mouse-icon">
-							<div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
-						</a>
-					</div>
-      	</div>
-    		<div class="row">
-    			<div class="col-sm ftco-animate">
-    				<a href="#" class="partner"><img src="images/partner-1.png" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    			<div class="col-sm ftco-animate">
-    				<a href="#" class="partner"><img src="images/partner-2.png" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    			<div class="col-sm ftco-animate">
-    				<a href="#" class="partner"><img src="images/partner-3.png" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    			<div class="col-sm ftco-animate">
-    				<a href="#" class="partner"><img src="images/partner-4.png" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    			<div class="col-sm ftco-animate">
-    				<a href="#" class="partner"><img src="images/partner-5.png" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    		</div>
-    	</div>
-    </section>
     <footer class="ftco-footer ftco-section">
       <div class="container">
         <div class="row mb-5">
