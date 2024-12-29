@@ -241,7 +241,7 @@ h2 {
                     <div class="col-md-3 d-flex justify-content-center">
                         <div class="service-item text-center">
                             <div class="icon">
-                                <img src="images/chamsoc" alt="Grooming" class="img-fluid">
+                                <img src="images/cattia.jpg" alt="Grooming" class="img-fluid">
                             </div>
                             <h3>Chăm Sóc Lông</h3>
                             <p>Chúng tôi cung cấp dịch vụ chăm sóc lông cho thú cưng, giúp thú cưng của bạn luôn sạch sẽ và xinh đẹp.</p>
@@ -252,7 +252,7 @@ h2 {
                     <div class="col-md-3 d-flex justify-content-center">
                         <div class="service-item text-center">
                             <div class="icon">
-                                <img src="images/thamkham" alt="Vet" class="img-fluid">
+                                <img src="images/images.jpg" alt="Vet" class="img-fluid">
                             </div>
                             <h3>Thăm Khám Thú Cưng</h3>
                             <p>Đội ngũ bác sĩ chuyên nghiệp của chúng tôi luôn sẵn sàng thăm khám và chăm sóc sức khỏe cho thú cưng của bạn.</p>
@@ -274,7 +274,7 @@ h2 {
                     <div class="col-md-3 d-flex justify-content-center">
                         <div class="service-item text-center">
                             <div class="icon">
-                                <img src="images/huanluyen" alt="Training" class="img-fluid">
+                                <img src="images/huanluyen.jpg" alt="Training" class="img-fluid">
                             </div>
                             <h3>Huấn Luyện Thú Cưng</h3>
                             <p>Chúng tôi cung cấp các khóa huấn luyện thú cưng, giúp chúng phát triển kỹ năng và hành vi tốt hơn.</p>
