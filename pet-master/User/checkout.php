@@ -59,7 +59,8 @@ if (isset($_SESSION['user'])) {
 	          <li class="nav-item"><a href="contact.php" class="nav-link">Liên hệ</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[<?php echo $count;?>]</a></li>
             <li class="nav-item dropdown">
-              <?php if (isset($_SESSION["user"])) {
+              <?php if (isset($_SESSION["user"])
+              ) {
               ?>
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['user'] ?></a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -259,12 +260,12 @@ if (isset($_SESSION['user'])) {
     if (isset($_SESSION['user'])) {
       $insert = $get_data->insert_Order($_SESSION['user'], $name, $phone, $address, $total, $pay, $status);
     } else {
-      $insert = $get_data->insert_Order(null,$name, $phone, $address, $total, $pay, $status);
+      $insert = $get_data->insert_Order('',$name, $phone, $address, $total, $pay, $status);
     }
 		if ($insert) {
       if (isset($_SESSION['user'])) {
         foreach ($select_cart as $se) {
-          $insert_order = $get_data->insert_Order_Detail($insert, $se['id_pet'], $se['name_pro'], $se['quantity_order'], $se['total']);
+          $insert_order = $get_data->insert_Order_Detail($insert, $se['id_pet'], $se['name_pet'], $se['quantity_order'], $se['total']);
         }
         if ($insert_order) {
           $delete = $get_data->delete_All_Cart($_SESSION['user']);
@@ -273,7 +274,7 @@ if (isset($_SESSION['user'])) {
         }
       }else{
         foreach ($_SESSION['cart'] as $se) {
-          $insert_order = $get_data->insert_Order_Detail($insert, $se['id_pet'], $se['name_pro'], $se['quantity'], $se['total']);
+          $insert_order = $get_data->insert_Order_Detail($insert, $se['id_pet'], $se['name'], $se['quantity'], $se['total']);
         }
         if ($insert_order) {
           session_destroy();

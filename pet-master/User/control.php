@@ -140,9 +140,9 @@ class data_user
     }
     public function insert_Order($username,$name,$phone,$add,$tatol,$pay,$status){
         global $conn;
-        $sql = "INSERT INTO `order_pro`( `userName`,`name`, `phone`, `address`, `total_order`, `payment`, `status`) 
+        $sql = "INSERT INTO `order_pro`( `username`,`name`, `phone`, `address`, `total_order`, `payment`, `status`) 
             values('$username','$name','$phone','$add','$tatol','$pay','$status')";
-        $run=mysqli_query($conn,$sql);
+        mysqli_query($conn,$sql);
         $lastInsertId = mysqli_insert_id($conn);
         return $lastInsertId;
     }
@@ -151,25 +151,6 @@ class data_user
         global $conn;
         $sql = "insert into order_detail(id_order,id_pet,name_pro,quantity,total) 
             values('$id_order','$id_pro','$name','$quantity','$total')";
-        $run = mysqli_query($conn, $sql);
-        return $run;
-    }
-    public function selelect_wishList(){
-        global $conn;
-        $sql = "SELECT * FROM wish_list";
-        $run = mysqli_query($conn, $sql);
-        return $run;
-    }
-    public function insert_wishList($id_pro,$image,$name,$price,){
-        global $conn;
-        $sql = "INSERT INTO `wish_list`(`id_pet`, `image`, `name_pro`, `price`)
-         VALUES ('$id_pro','$image','$name','$price')";
-        $run = mysqli_query($conn, $sql);
-        return $run;
-    }
-    public function delete_wishList($id_pro){
-        global $conn;
-        $sql = "DELETE FROM  wish_list where id_pet = '$id_pro'";
         $run = mysqli_query($conn, $sql);
         return $run;
     }

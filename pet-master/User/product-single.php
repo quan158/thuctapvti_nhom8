@@ -141,13 +141,10 @@ img {
 									<a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Đã bán</span></a>
 								</p>
 							</div>
-	    				<p class="price"><?php if (isset($pro['price_sale'])) { ?><span class="price-sale"><?php
-                            $price_sale = $pro['price_sale']; 
+	    				<p class="price">
+							<span class="price-sale"><?php $price_sale = $pro['price']; 
                             $formatted_price = number_format($price_sale, 0, ',', '.'); 
-                            echo $formatted_price . ' ₫';
-							?></span><?php } else { ?><span class="price-sale"><?php $price_sale = $pro['price']; 
-                            $formatted_price = number_format($price_sale, 0, ',', '.'); 
-                            echo $formatted_price . ' ₫'; ?></span> <?php } ?></p>
+                            echo $formatted_price . ' ₫'; ?></p>
 	    				<p><?php echo $pro['description'] ?></p>
 							<div class="row mt-4">
 								<div class="col-md-6">
@@ -197,7 +194,7 @@ img {
 							'id_pet' => $se['id_pet'],
 							'name' => $se['name_pet'],
 							'quantity' => $quantity,
-							'picture' => $se['image'],
+							'picture' => $se['picture'],
 							'price' => $price_sale,
 							'total' => $price_sale * $quantity
 						);
@@ -274,13 +271,10 @@ img {
     						<h3><a href="product-single.php?id_pet=<?php echo $pro['id_pet'] ?>"><?php echo $pro['name_pet'] ?></a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><?php if (isset($pro['price_sale'])) { ?><span class="mr-2 price-dc"><?php $price_sale = $pro['price'];
-									   $formatted_price = number_format($price_sale, 0, ',', '.');
-									   echo $formatted_price . ' ₫' ?></span> <span class="price-sale"><?php $price_sale = $pro['price_sale'];
-										   $formatted_price = number_format($price_sale, 0, ',', '.');
-										   echo $formatted_price . ' ₫' ?></span><?php } else { ?><span class="price-sale"><?php $price_sale = $pro['price'];
+		    						<p class="price">
+										<span class="price-sale"><?php $price_sale = $pro['price'];
 												  $formatted_price = number_format($price_sale, 0, ',', '.');
-												  echo $formatted_price . ' ₫' ?></span> <?php } ?> </p>
+												  echo $formatted_price . ' ₫' ?></span>  </p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
