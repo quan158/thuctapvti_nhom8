@@ -313,8 +313,8 @@ if (empty($_SESSION['user'])) {
                           <tr>
                             <td><?php echo $i;$i+=1; ?></td>
                             <td><?php echo $se['name'] ?></td>
-                            <td><?php echo $se['email'] ?></td>
                             <td><?php echo $se['phone'] ?></td>
+                            <td><?php echo $se['email'] ?></td>
                             <td><?php echo $se['messenger'] ?></td>
                             <td>
                               <div class="form-button-action">

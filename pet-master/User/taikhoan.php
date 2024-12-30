@@ -50,7 +50,7 @@ if (isset($_SESSION['user'])) {
         border-color: #6d8f39;
       }
     </style>
-    <title>Vegefoods</title>
+    <title>Pet Kingdom</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -80,7 +80,7 @@ if (isset($_SESSION['user'])) {
   <body class="goto-here">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.php">Vegefoods</a>
+	      <a class="navbar-brand" href="index.php">Pet Kingdom</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -284,8 +284,8 @@ if (isset($_SESSION['user'])) {
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Vegefoods</h2>
-              <p>Sản phẩm tươi sạch</p>
+              <h2 class="ftco-heading-2">Pet Kingdom</h2>
+              
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
