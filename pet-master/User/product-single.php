@@ -170,7 +170,7 @@ img {
 		          	</div>
 		          	<div class="w-100"></div>
 		          	<div class="col-md-12">
-		          		<p style="color: #000;"><?php echo "Còn ". $pro['quantity']."kg" ?></p>
+		          		<p style="color: #000;"><?php echo "Còn ". $pro['quantity']." con" ?></p>
 		          	</div>
 					<?php } ?>
 	          	</div>

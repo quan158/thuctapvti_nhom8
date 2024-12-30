@@ -15,7 +15,7 @@ if (isset($_SESSION['user'])) {
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Vegefoods</title>
+    <title>Pet Kingdom</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -45,7 +45,7 @@ if (isset($_SESSION['user'])) {
   <body class="goto-here">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.php">Vegefoods</a>
+	      <a class="navbar-brand" href="index.php">Pet Kingdom</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -140,7 +140,7 @@ if(isset($_GET['minus'])){
         if ($newQuantity > 0) {
           $product[] = array(
             'id_pet' => $cart_Item['id_pet'],
-            'name' => $cart_Item['name_pet'],
+            'name' => $cart_Item['name'],
             'quantity' => $newQuantity,
             'picture' => $cart_Item['picture'],
             'price' => $cart_Item['price'],
@@ -183,7 +183,7 @@ if (isset($_GET['plus'])) {
           $newQuantity =$cart_Item['quantity']+1;
                  $product[] = array(
                     'id_pet' => $cart_Item['id_pet'],
-                    'name' => $cart_Item['name_pet'],
+                    'name' => $cart_Item['name'],
                     'quantity' => $newQuantity,
                     'picture' => $cart_Item['picture'],
                     'price' => $cart_Item['price'],
@@ -297,7 +297,7 @@ if (isset($_GET['plus'])) {
 						        <td class="quantity">
 						    <div class="d-flex align-items-center">
                             <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2" data-action="minus"><a href="cart.php?minus=<?php echo $se_cart['id_pet'] ?>"><i class="ion-ios-remove"></i></a></button>
-                            <input name="quantity[<?php echo $se_cart['id_pro']; ?>]" value="<?php echo $se_cart['quantity'] ?>" type="number" class="form-control input-number">
+                            <input name="quantity[<?php echo $se_cart['id_pet']; ?>]" value="<?php echo $se_cart['quantity'] ?>" type="number" class="form-control input-number">
                             <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2" data-action="plus"><a href="cart.php?plus=<?php echo $se_cart['id_pet'] ?>"><i class="ion-ios-add"></a></i></button>
                         </div>
 					          </td>
@@ -393,8 +393,8 @@ if (isset($_GET['plus'])) {
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Vegefoods</h2>
-              <p>Sản phẩm tươi sạch</p>
+              <h2 class="ftco-heading-2">Pet Kingdom</h2>
+            
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
