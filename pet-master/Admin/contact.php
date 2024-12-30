@@ -298,8 +298,8 @@ if (empty($_SESSION['user'])) {
                           <tr>
                             <th>STT</th>
                             <th>Tên người gửi</th>
-                            <th>Số điện thoại</th>
                             <th>Email</th>
+                            <th>Số điện thoại</th>
                             <th>Nội dung</th>
                             <th style="width: 10%">Hành động</th>
                           </tr>
@@ -313,8 +313,8 @@ if (empty($_SESSION['user'])) {
                           <tr>
                             <td><?php echo $i;$i+=1; ?></td>
                             <td><?php echo $se['name'] ?></td>
-                            <td><?php echo $se['phone'] ?></td>
                             <td><?php echo $se['email'] ?></td>
+                            <td><?php echo $se['phone'] ?></td>
                             <td><?php echo $se['messenger'] ?></td>
                             <td>
                               <div class="form-button-action">
