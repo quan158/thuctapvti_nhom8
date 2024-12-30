@@ -128,7 +128,7 @@ if(isset($_GET['minus'])){
         if($cart_Item['id_pet'] != $id_pro ){
                  $product[] = array(
                     'id_pet' => $cart_Item['id_pet'],
-                    'name' => $cart_Item['name_pet'],
+                    'name' => $cart_Item['name'],
                     'quantity' => $cart_Item['quantity'],
                     'picture' => $cart_Item['picture'],
                     'price' => $cart_Item['price'],
@@ -172,7 +172,7 @@ if (isset($_GET['plus'])) {
         if($cart_Item['id_pet'] != $id_pro){
                  $product[] = array(
                     'id_pet' => $cart_Item['id_pet'],
-                    'name' => $cart_Item['name_pet'],
+                    'name' => $cart_Item['name'],
                     'quantity' => $cart_Item['quantity'],
                     'picture' => $cart_Item['picture'],
                     'price' => $cart_Item['price'],
