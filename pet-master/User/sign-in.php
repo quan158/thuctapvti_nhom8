@@ -68,24 +68,29 @@ https://www.tooplate.com/view/2127-little-fashion
                                     </form>
                                 </div>
                                <?php
-                                include("control.php");
-                                $get_Data = new data_user();
+include("control.php");
 
-                                if (isset($_POST['submit'])) {
-                                    // Gọi hàm login để kiểm tra tên đăng nhập và mật khẩu
-                                    $select = $get_Data->login($_POST['username'], $_POST['password']);
-                                    
-                                    if ($select) {
-                                        // Đăng nhập thành công
-                                        echo "<script>alert('Đăng nhập thành công'); window.location=('index.php');</script>";
-                                        // Lưu trữ thông tin người dùng trong session
-                                        $_SESSION['user'] = $_POST['username'];
-                                    } else {
-                                        // Đăng nhập thất bại
-                                        echo "<script>alert('Đăng nhập thất bại');</script>";
-                                    }
-                                }
-                                ?>
+$get_Data = new data_user();
+
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Gọi hàm login để kiểm tra tên đăng nhập và mật khẩu
+    $user = $get_Data->login($username, $password);
+
+    if ($user) {
+        // Đăng nhập thành công
+        $_SESSION['user'] = $username;
+        echo "<script>alert('Đăng nhập thành công'); window.location='index.php';</script>";
+    } else {
+        // Đăng nhập thất bại
+        echo "<script>alert('Đăng nhập thất bại');</script>";
+    }
+}
+?>
+
+
 
 
                             </div>
