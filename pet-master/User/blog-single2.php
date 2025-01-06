@@ -53,7 +53,13 @@ if (isset($_SESSION['user'])) {
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item"><a href="index.php" class="nav-link">Trang chủ</a></li>
-	          <li class="nav-item"><a href="shop.php" class="nav-link">Cửa hàng</a></li>
+	          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cửa hàng</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="shop.php">Cửa hàng</a>
+              	<a class="dropdown-item" href="wishlist.php">Danh sách yêu thích</a>
+              </div>
+            </li>
 	          <li class="nav-item"><a href="about.php" class="nav-link">Về chúng tôi</a></li>
 	          <li class="nav-item"><a href="blog.php" class="nav-link">Tin tức</a></li>
 	          <li class="nav-item"><a href="contact.php" class="nav-link">Liên hệ</a></li>
@@ -95,22 +101,24 @@ if (isset($_SESSION['user'])) {
   <div class="container">
     <div class="row">
       <div class="col-lg-8 ftco-animate">
-        <h2 class="mb-3" style="color: #333; font-size: 32px; font-weight: bold; text-align: center;">Chó – Người Bạn Trung Thành Của Con Người</h2>
-        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Chó từ lâu đã được biết đến là loài động vật trung thành và gần gũi nhất với con người. Không chỉ là thú cưng, chó còn là người bạn đồng hành đáng tin cậy trong nhiều hoạt động và công việc hàng ngày. Chúng có nhiều giống loài khác nhau, từ những chú chó nhỏ nhắn như Chihuahua đến những giống chó to lớn và mạnh mẽ như Golden Retriever hay Rottweiler. Mỗi giống chó đều mang những đặc điểm riêng về ngoại hình và tính cách, nhưng điểm chung của chúng là sự trung thành, thông minh và tình cảm với con người.</p>
+        <h2 class="mb-3" style="color: #333; font-size: 32px; font-weight: bold; text-align: center;">Mèo – Loài Động Vật Thanh Lịch và Tinh Tế</h2>
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Mèo là loài động vật đáng yêu, tinh tế và thanh lịch, từ lâu đã trở thành bạn đồng hành của nhiều gia đình trên khắp thế giới. Với sự duyên dáng trong từng bước đi và đôi mắt bí ẩn, mèo không chỉ mang lại niềm vui mà còn tạo ra sự bình yên cho chủ nhân. Mèo nổi tiếng với tính cách độc lập nhưng vẫn gần gũi, chúng không đòi hỏi sự chú ý liên tục nhưng luôn xuất hiện vào những khoảnh khắc cần thiết, như một người bạn lặng lẽ nhưng luôn hiện diện khi cần.</p>
 
-        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Chó không chỉ đáng yêu mà còn có khả năng bảo vệ chủ nhân và gia đình. Bản năng canh giữ của chúng khiến chúng trở thành "người bảo vệ" tận tụy, luôn sẵn sàng cảnh báo hoặc ngăn chặn bất kỳ mối nguy hiểm nào. Một số giống chó còn được huấn luyện để thực hiện những nhiệm vụ đặc biệt, như chó nghiệp vụ hỗ trợ cảnh sát truy tìm tội phạm, hoặc chó cứu hộ trong các tình huống khẩn cấp. Chúng cũng rất biết cách thấu hiểu cảm xúc của con người, có khả năng nhận ra khi chủ nhân buồn bã hoặc cần được an ủi.</p>
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Mèo có khả năng tự chăm sóc bản thân rất tốt, từ việc vệ sinh đến việc tìm nơi nghỉ ngơi yên tĩnh. Chúng có thể dành hàng giờ liếm láp lông để giữ cho mình luôn sạch sẽ và thơm tho. Điều này làm cho việc nuôi mèo trở nên ít tốn công hơn so với các loài vật khác. Mèo thường thích tự do và có không gian riêng, nhưng khi chúng cảm thấy cần yêu thương, chúng sẽ không ngại leo lên đùi bạn, dụi đầu vào tay bạn để được vuốt ve. Đây chính là sự kết hợp hoàn hảo giữa tính độc lập và tình cảm mà chỉ mèo mới có thể mang lại.</p>
 
         <div style="text-align: center; margin: 30px 0;">
-          <img src="images/cho11.jpg" alt="Chó cưng" class="img-fluid" style="max-width: 100%; border-radius: 10px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);">
+          <img src="images/meo2.jpg" alt="Mèo cưng" class="img-fluid" style="max-width: 100%; width: 800px; height: auto; border-radius: 10px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);">
         </div>
 
-        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Chó là loài động vật thông minh, dễ huấn luyện và có khả năng học hỏi nhanh. Từ những bài tập cơ bản như ngồi, đứng, đến các kỹ năng phức tạp hơn như bắt tay hay làm theo hiệu lệnh, chó đều có thể thực hiện với sự tập trung và ngoan ngoãn. Những chú chó không chỉ biết nghe lời mà còn rất thích tham gia các hoạt động ngoài trời cùng chủ nhân, như chạy bộ, đi dạo hay chơi đùa. Chúng luôn sẵn sàng theo chân bạn trong mọi cuộc phiêu lưu và trở thành người bạn đáng tin cậy trong suốt hành trình.</p>
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Các giống mèo cũng rất đa dạng, từ những chú mèo lông ngắn mượt mà như mèo Anh lông ngắn, đến những giống mèo lông dài quý phái như mèo Ba Tư. Mỗi giống đều có những đặc điểm về ngoại hình và tính cách khác nhau, nhưng chúng đều toát lên vẻ đẹp riêng biệt. Mèo thường được biết đến với đôi tai nhạy bén, đôi mắt sắc sảo và phản xạ nhanh nhẹn, chúng là những thợ săn tài ba, có khả năng bắt chuột cực kỳ hiệu quả.</p>
 
-        <h3 class="mb-3" style="color: #333; font-size: 28px; font-weight: bold;">Ưu điểm khi nuôi chó</h3>
-        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Chó là loài vật tình cảm và dễ kết nối với con người. Chúng không chỉ giúp giữ nhà, tạo cảm giác an toàn mà còn mang lại niềm vui cho cả gia đình, đặc biệt là trẻ nhỏ. Chó còn là bạn đồng hành lý tưởng cho những ai thích tập thể dục hoặc có lối sống năng động. Chúng cũng rất nhạy bén với cảm xúc của con người, mang lại sự an ủi và hỗ trợ tinh thần, giúp chủ nhân giảm căng thẳng và có thêm nguồn động lực trong cuộc sống.</p>
+        <h3 class="mb-3" style="color: #333; font-size: 28px; font-weight: bold;">Ưu điểm khi nuôi mèo</h3>
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Mèo là loài động vật sạch sẽ và ít đòi hỏi thời gian chăm sóc hơn so với chó. Chúng tự vệ sinh hàng ngày và không cần phải dắt đi dạo hay chơi đùa ngoài trời nhiều. Điều này khiến mèo trở thành lựa chọn lý tưởng cho những người bận rộn hoặc sống trong các không gian nhỏ hẹp như căn hộ. Ngoài ra, mèo có khả năng bắt chuột tự nhiên, giúp giữ cho ngôi nhà luôn sạch sẽ và gọn gàng. Chúng cũng không gây ra tiếng ồn lớn, tạo nên một môi trường yên tĩnh và thư thái cho chủ nhân.</p>
 
-        <h3 class="mb-3" style="color: #333; font-size: 28px; font-weight: bold;">Nhược điểm khi nuôi chó</h3>
-        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Tuy nhiên, nuôi chó cũng đi kèm với một số nhược điểm. Chúng cần sự chăm sóc thường xuyên, từ việc tắm rửa, chải lông, cho ăn đến việc dắt đi dạo hàng ngày để đảm bảo chúng được vận động. Một số giống chó lớn cần không gian rộng rãi để sống thoải mái và vận động đầy đủ, nếu không, chúng có thể cảm thấy buồn chán và có hành vi phá phách như gặm đồ đạc. Thêm vào đó, lông chó có thể gây dị ứng cho một số người, và việc vệ sinh, dọn dẹp lông rụng có thể tốn nhiều thời gian.</p>
+        <h3 class="mb-3" style="color: #333; font-size: 28px; font-weight: bold;">Nhược điểm khi nuôi mèo</h3>
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Tuy nhiên, mèo cũng có những nhược điểm riêng. Một số người có thể bị dị ứng với lông mèo, đặc biệt là khi mèo rụng lông vào các mùa thay lông. Việc vệ sinh lông mèo rụng trong nhà có thể là một thách thức đối với nhiều người. Ngoài ra, tính cách độc lập của mèo đôi khi khiến chúng trở nên khá "lạnh lùng", không phải lúc nào cũng thích được ôm ấp hay vuốt ve như chó. Thêm vào đó, mèo thường có thói quen cào móng vào đồ đạc, từ ghế sofa đến rèm cửa, và nếu không được huấn luyện từ sớm, điều này có thể gây hỏng hóc cho nội thất trong nhà.</p>
+
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Dù có một số hạn chế nhỏ, nhưng với tính cách nhẹ nhàng, độc lập và khả năng mang lại cảm giác thư thái, mèo vẫn là người bạn đồng hành lý tưởng cho những ai yêu thích sự thanh lịch và yên tĩnh. Chúng không chỉ là thú cưng mà còn là biểu tượng của sự duyên dáng và tự do, khiến cuộc sống của chủ nhân trở nên phong phú và ấm áp hơn.</p>
             
 
 
