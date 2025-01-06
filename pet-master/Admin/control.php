@@ -9,6 +9,27 @@ include("connect.php");
         $run = mysqli_query($conn, $sql);
         return $run;
     }
+
+    public function register($name, $pass, $phone, $email)
+{
+        global $conn;
+        
+        // Làm sạch dữ liệu đầu vào để tránh SQL Injection
+        $name = mysqli_real_escape_string($conn, $name);
+        $pass = mysqli_real_escape_string($conn, $pass);
+        $phone = mysqli_real_escape_string($conn, $phone);
+        $email = mysqli_real_escape_string($conn, $email);
+        
+        // Câu lệnh SQL để chèn người dùng mới
+        $sql = "INSERT INTO `Admin` (`username`, `password`, `phone`, `email`) 
+                VALUES ('$name', '$pass', '$phone', '$email')";
+        
+        // Thực thi câu lệnh SQL
+        $run = mysqli_query($conn, $sql);
+        
+        return $run;
+    }
+
     
     //get accounts user
     public function select_user()
@@ -33,13 +54,33 @@ include("connect.php");
     }
 
     //login to page
-    public function login($user,$pass)
-    {
+   public function login($user, $pass) {
         global $conn;
-        $sql = " select * from admin where username='$user' and password='$pass'";
-        $run=mysqli_query($conn,$sql);
-        return $run;
+        
+        // Làm sạch dữ liệu đầu vào để tránh SQL injection
+        $user = mysqli_real_escape_string($conn, $user);
+
+        // Câu lệnh SQL để lấy thông tin người dùng
+        $sql = "SELECT * FROM `Admin` WHERE `username` = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $user);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+
+            // Kiểm tra mật khẩu với password_verify
+            if (password_verify($pass, $row['password'])) {
+                return $row; // Trả về thông tin người dùng khi mật khẩu đúng
+            } else {
+                return false; // Đăng nhập thất bại nếu mật khẩu không khớp
+            }
+        } else {
+            return false; // Đăng nhập thất bại nếu không tìm thấy người dùng
+        }
     }
+
     }
     class data{
     //create category

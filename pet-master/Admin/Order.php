@@ -128,9 +128,9 @@ if (empty($_SESSION['user'])) {
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="Report.php">
+                      <a href="sign-up.php">
                         <i class="icon-chart"></i>
-                        <span class="sub-item">Báo cáo</span>
+                        <span class="sub-item">Thêm tài khoản</span>
                         
                       </a>
                     </li>
