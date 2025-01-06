@@ -55,39 +55,45 @@
             </div>
         </section>
         
-        <?php 
-            include("control.php");
-            $get_Data = new data_user();
+        <?php
+include("control.php");
+$get_Data = new data_user();
 
-            if (isset($_POST['submit'])) {
-                if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm_password']) && isset($_POST['email'])) {
-                    if ($_POST['password'] != $_POST['confirm_password']) {
-                        echo "<script>alert('Passwords do not match')</script>";
-                    } else {
-                        $select = $get_Data->select_user($_POST['username']);
-                        $check = 0;
-                        foreach ($select as $sel) {
-                            $check++;
-                        }
-                        if ($check >= 1) {
-                            echo "<script>alert('Tên đăng nhập đã tồn tại')</script>";
-                        } else {
-                        $hashed_password = $_POST['password'];
-                
+if (isset($_POST['submit'])) {
+    if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm_password']) && isset($_POST['email'])) {
+        if ($_POST['password'] != $_POST['confirm_password']) {
+            echo "<script>alert('Passwords do not match')</script>";
+        } else {
+            // Kiểm tra xem tên đăng nhập đã tồn tại chưa
+            $select = $get_Data->select_user($_POST['username']);
+            $check = 0;
+            foreach ($select as $sel) {
+                $check++;
+            }
+
+            if ($check >= 1) {
+                echo "<script>alert('Tên đăng nhập đã tồn tại')</script>";
+            } else {
+                // Mã hóa mật khẩu bằng bcrypt
+                $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+
                 // Chèn người dùng mới vào cơ sở dữ liệu
-                    $insert = $get_Data->insert_User($_POST['username'], $hashed_password, $_POST['email']);
-                        if ($insert) {
-                                echo "<script>alert('Đăng ký thành công'); window.location='sign-in.php';</script>";
-                            } else {
-                                echo "<script>alert('Đăng ký thất bại')</script>";
-                            }
-                        }
-                    }
+                $insert = $get_Data->insert_User($_POST['username'], $hashed_password, $_POST['email']);
+                if ($insert) {
+                    echo "<script>alert('Đăng ký thành công'); window.location='sign-in.php';</script>";
                 } else {
-                    echo "<script>alert('Vui lòng nhập đủ thông tin')</script>";
+                    echo "<script>alert('Đăng ký thất bại')</script>";
                 }
             }
-        ?>
+        }
+    } else {
+        echo "<script>alert('Vui lòng nhập đủ thông tin')</script>";
+    }
+}
+?>
+
+
     </main>
 
     <!-- JAVASCRIPT FILES -->
