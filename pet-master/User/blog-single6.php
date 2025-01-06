@@ -101,22 +101,23 @@ if (isset($_SESSION['user'])) {
   <div class="container">
     <div class="row">
       <div class="col-lg-8 ftco-animate">
-        <h2 class="mb-3" style="color: #333; font-size: 32px; font-weight: bold; text-align: center;">Chó – Người Bạn Trung Thành Của Con Người</h2>
-        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Chó từ lâu đã được biết đến là loài động vật trung thành và gần gũi nhất với con người. Không chỉ là thú cưng, chó còn là người bạn đồng hành đáng tin cậy trong nhiều hoạt động và công việc hàng ngày. Chúng có nhiều giống loài khác nhau, từ những chú chó nhỏ nhắn như Chihuahua đến những giống chó to lớn và mạnh mẽ như Golden Retriever hay Rottweiler. Mỗi giống chó đều mang những đặc điểm riêng về ngoại hình và tính cách, nhưng điểm chung của chúng là sự trung thành, thông minh và tình cảm với con người.</p>
+        <h2 class="mb-3" style="color: #333; font-size: 32px; font-weight: bold; text-align: center;">Cá – Loài Vật Dưới Nước Đẹp Mắt Và Bình Yên</h2>
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Cá là loài vật sống dưới nước, với cơ thể mảnh mai và sự đa dạng phong phú về hình dáng và màu sắc. Chúng có thể sống ở cả môi trường nước ngọt và nước mặn, và là một trong những loài động vật phổ biến nhất được nuôi làm thú cưng. Cá không chỉ làm đẹp thêm cho không gian sống mà còn mang lại sự thư giãn, giúp giảm căng thẳng với những chuyển động nhẹ nhàng và lôi cuốn trong hồ nước.</p>
 
-        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Chó không chỉ đáng yêu mà còn có khả năng bảo vệ chủ nhân và gia đình. Bản năng canh giữ của chúng khiến chúng trở thành "người bảo vệ" tận tụy, luôn sẵn sàng cảnh báo hoặc ngăn chặn bất kỳ mối nguy hiểm nào. Một số giống chó còn được huấn luyện để thực hiện những nhiệm vụ đặc biệt, như chó nghiệp vụ hỗ trợ cảnh sát truy tìm tội phạm, hoặc chó cứu hộ trong các tình huống khẩn cấp. Chúng cũng rất biết cách thấu hiểu cảm xúc của con người, có khả năng nhận ra khi chủ nhân buồn bã hoặc cần được an ủi.</p>
-
+        <!-- Hình ảnh minh họa -->
         <div style="text-align: center; margin: 30px 0;">
-          <img src="images/cho11.jpg" alt="Chó cưng" class="img-fluid" style="max-width: 100%; border-radius: 10px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);">
+          <img src="images/beca.jpg" alt="Cá" class="img-fluid" style="max-width: 100%; width: 800px; height: auto; border-radius: 10px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);">
         </div>
 
-        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Chó là loài động vật thông minh, dễ huấn luyện và có khả năng học hỏi nhanh. Từ những bài tập cơ bản như ngồi, đứng, đến các kỹ năng phức tạp hơn như bắt tay hay làm theo hiệu lệnh, chó đều có thể thực hiện với sự tập trung và ngoan ngoãn. Những chú chó không chỉ biết nghe lời mà còn rất thích tham gia các hoạt động ngoài trời cùng chủ nhân, như chạy bộ, đi dạo hay chơi đùa. Chúng luôn sẵn sàng theo chân bạn trong mọi cuộc phiêu lưu và trở thành người bạn đáng tin cậy trong suốt hành trình.</p>
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Có rất nhiều loại cá khác nhau, từ cá cảnh nhỏ nhắn như cá betta, cá vàng, đến những loài cá lớn hơn như cá koi, cá rô phi. Cá có thể sống trong các bể cá nhỏ hoặc các hồ lớn, và chúng thường được nuôi trong môi trường nước sạch, có hệ thống lọc để duy trì chất lượng nước. Việc chăm sóc cá cảnh không quá phức tạp, nhưng đòi hỏi người nuôi phải chú ý đến nhiệt độ nước, chế độ ăn uống và vệ sinh bể cá.</p>
 
-        <h3 class="mb-3" style="color: #333; font-size: 28px; font-weight: bold;">Ưu điểm khi nuôi chó</h3>
-        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Chó là loài vật tình cảm và dễ kết nối với con người. Chúng không chỉ giúp giữ nhà, tạo cảm giác an toàn mà còn mang lại niềm vui cho cả gia đình, đặc biệt là trẻ nhỏ. Chó còn là bạn đồng hành lý tưởng cho những ai thích tập thể dục hoặc có lối sống năng động. Chúng cũng rất nhạy bén với cảm xúc của con người, mang lại sự an ủi và hỗ trợ tinh thần, giúp chủ nhân giảm căng thẳng và có thêm nguồn động lực trong cuộc sống.</p>
+        <h4 style="color: #333; font-size: 24px; margin-top: 30px; font-weight: bold;">Ưu điểm khi nuôi cá:</h4>
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Cá là loài vật nuôi rất dễ chăm sóc và không yêu cầu quá nhiều sự chú ý. Một bể cá nhỏ có thể trang trí cho không gian sống và giúp tạo nên không khí yên tĩnh, thư giãn. Ngắm cá bơi lội trong nước là một hoạt động thư giãn tuyệt vời, giúp giảm căng thẳng và mang lại cảm giác bình yên. Cá cũng không gây tiếng ồn, không làm bẩn không gian xung quanh, và không cần không gian sống quá lớn, rất phù hợp cho những người sống trong căn hộ hoặc không có nhiều thời gian chăm sóc thú cưng.</p>
 
-        <h3 class="mb-3" style="color: #333; font-size: 28px; font-weight: bold;">Nhược điểm khi nuôi chó</h3>
-        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Tuy nhiên, nuôi chó cũng đi kèm với một số nhược điểm. Chúng cần sự chăm sóc thường xuyên, từ việc tắm rửa, chải lông, cho ăn đến việc dắt đi dạo hàng ngày để đảm bảo chúng được vận động. Một số giống chó lớn cần không gian rộng rãi để sống thoải mái và vận động đầy đủ, nếu không, chúng có thể cảm thấy buồn chán và có hành vi phá phách như gặm đồ đạc. Thêm vào đó, lông chó có thể gây dị ứng cho một số người, và việc vệ sinh, dọn dẹp lông rụng có thể tốn nhiều thời gian.</p>
+        <h4 style="color: #333; font-size: 24px; margin-top: 30px; font-weight: bold;">Nhược điểm khi nuôi cá:</h4>
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Mặc dù nuôi cá rất dễ dàng, nhưng cũng có một số thách thức cần lưu ý. Việc duy trì môi trường nước sạch và ổn định là rất quan trọng đối với sức khỏe của cá. Bể cá cần được vệ sinh định kỳ và hệ thống lọc nước cần hoạt động tốt để tránh sự tích tụ của các chất bẩn. Ngoài ra, một số loài cá có thể rất nhạy cảm với thay đổi nhiệt độ nước hoặc độ pH, vì vậy người nuôi cần nắm vững kiến thức về cách chăm sóc cá đúng cách.</p>
+
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Dù có những nhược điểm nhất định, cá vẫn là loài vật tuyệt vời để nuôi trong nhà, mang lại vẻ đẹp sinh động và sự thư giãn tuyệt vời cho không gian sống. Chúng không chỉ là loài vật cảnh mà còn có tác dụng xoa dịu tinh thần, giúp chủ nhân cảm thấy thoải mái và bình yên hơn trong cuộc sống hàng ngày.</p>
             
 
 

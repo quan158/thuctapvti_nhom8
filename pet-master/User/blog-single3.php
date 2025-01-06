@@ -101,22 +101,25 @@ if (isset($_SESSION['user'])) {
   <div class="container">
     <div class="row">
       <div class="col-lg-8 ftco-animate">
-        <h2 class="mb-3" style="color: #333; font-size: 32px; font-weight: bold; text-align: center;">Chó – Người Bạn Trung Thành Của Con Người</h2>
-        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Chó từ lâu đã được biết đến là loài động vật trung thành và gần gũi nhất với con người. Không chỉ là thú cưng, chó còn là người bạn đồng hành đáng tin cậy trong nhiều hoạt động và công việc hàng ngày. Chúng có nhiều giống loài khác nhau, từ những chú chó nhỏ nhắn như Chihuahua đến những giống chó to lớn và mạnh mẽ như Golden Retriever hay Rottweiler. Mỗi giống chó đều mang những đặc điểm riêng về ngoại hình và tính cách, nhưng điểm chung của chúng là sự trung thành, thông minh và tình cảm với con người.</p>
-
-        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Chó không chỉ đáng yêu mà còn có khả năng bảo vệ chủ nhân và gia đình. Bản năng canh giữ của chúng khiến chúng trở thành "người bảo vệ" tận tụy, luôn sẵn sàng cảnh báo hoặc ngăn chặn bất kỳ mối nguy hiểm nào. Một số giống chó còn được huấn luyện để thực hiện những nhiệm vụ đặc biệt, như chó nghiệp vụ hỗ trợ cảnh sát truy tìm tội phạm, hoặc chó cứu hộ trong các tình huống khẩn cấp. Chúng cũng rất biết cách thấu hiểu cảm xúc của con người, có khả năng nhận ra khi chủ nhân buồn bã hoặc cần được an ủi.</p>
-
+        <h2 class="mb-3" style="color: #333; font-size: 32px; font-weight: bold; text-align: center;">Chim – Biểu Tượng Của Sự Tự Do Và Thanh Bình</h2>
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Chim là loài động vật có lông vũ, biết bay, biểu tượng của sự tự do và thanh bình trong thiên nhiên. Với đôi cánh nhẹ nhàng và đôi mắt tinh anh, chúng mang đến vẻ đẹp và sự thanh thản cho mọi cảnh vật chúng bay qua. Từ những cánh chim bay lượn trên bầu trời cho đến tiếng hót du dương vào mỗi buổi sáng, chim luôn làm cho cuộc sống của con người trở nên sinh động và tràn đầy sức sống.</p>
+        
+        <!-- Hình ảnh minh họa -->
         <div style="text-align: center; margin: 30px 0;">
-          <img src="images/cho11.jpg" alt="Chó cưng" class="img-fluid" style="max-width: 100%; border-radius: 10px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);">
+          <img src="images/chimblue.jpg" alt="Chim bay" class="img-fluid" style="max-width: 100%; width: 800px; height: auto; border-radius: 10px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);">
         </div>
 
-        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Chó là loài động vật thông minh, dễ huấn luyện và có khả năng học hỏi nhanh. Từ những bài tập cơ bản như ngồi, đứng, đến các kỹ năng phức tạp hơn như bắt tay hay làm theo hiệu lệnh, chó đều có thể thực hiện với sự tập trung và ngoan ngoãn. Những chú chó không chỉ biết nghe lời mà còn rất thích tham gia các hoạt động ngoài trời cùng chủ nhân, như chạy bộ, đi dạo hay chơi đùa. Chúng luôn sẵn sàng theo chân bạn trong mọi cuộc phiêu lưu và trở thành người bạn đáng tin cậy trong suốt hành trình.</p>
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Có vô số loài chim với đủ loại hình dáng và màu sắc khác nhau. Chúng có thể là những chú chim nhỏ nhắn, nhanh nhẹn như chim sẻ, hay những loài chim lớn mạnh mẽ như đại bàng. Chim không chỉ làm đẹp thêm cho thiên nhiên mà còn có vai trò quan trọng trong việc cân bằng hệ sinh thái. Chúng giúp thụ phấn cho cây trồng, kiểm soát sâu bọ, và thậm chí giúp tái tạo môi trường thông qua việc phát tán hạt giống.</p>
 
-        <h3 class="mb-3" style="color: #333; font-size: 28px; font-weight: bold;">Ưu điểm khi nuôi chó</h3>
-        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Chó là loài vật tình cảm và dễ kết nối với con người. Chúng không chỉ giúp giữ nhà, tạo cảm giác an toàn mà còn mang lại niềm vui cho cả gia đình, đặc biệt là trẻ nhỏ. Chó còn là bạn đồng hành lý tưởng cho những ai thích tập thể dục hoặc có lối sống năng động. Chúng cũng rất nhạy bén với cảm xúc của con người, mang lại sự an ủi và hỗ trợ tinh thần, giúp chủ nhân giảm căng thẳng và có thêm nguồn động lực trong cuộc sống.</p>
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Chim là loài vật có thể nuôi làm cảnh, đặc biệt là những giống chim như vẹt, sáo, và chim hoàng yến. Các loài chim cảnh này không chỉ có ngoại hình đẹp mà còn rất thông minh và có khả năng bắt chước tiếng nói của con người. Mỗi sáng sớm, tiếng chim hót trong trẻo vang lên tạo cảm giác thư thái, mang lại không gian sống tươi mới và gần gũi với thiên nhiên.</p>
 
-        <h3 class="mb-3" style="color: #333; font-size: 28px; font-weight: bold;">Nhược điểm khi nuôi chó</h3>
-        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Tuy nhiên, nuôi chó cũng đi kèm với một số nhược điểm. Chúng cần sự chăm sóc thường xuyên, từ việc tắm rửa, chải lông, cho ăn đến việc dắt đi dạo hàng ngày để đảm bảo chúng được vận động. Một số giống chó lớn cần không gian rộng rãi để sống thoải mái và vận động đầy đủ, nếu không, chúng có thể cảm thấy buồn chán và có hành vi phá phách như gặm đồ đạc. Thêm vào đó, lông chó có thể gây dị ứng cho một số người, và việc vệ sinh, dọn dẹp lông rụng có thể tốn nhiều thời gian.</p>
+        <h4 style="color: #333; font-size: 24px; margin-top: 30px; font-weight: bold;">Ưu điểm khi nuôi chim:</h4>
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Chim là loài vật dễ chăm sóc và không đòi hỏi quá nhiều sự quan tâm như chó hay mèo. Chúng mang lại niềm vui và sự thư giãn với tiếng hót vui tai và bộ lông sặc sỡ. Chim không cần không gian lớn để sống, đặc biệt phù hợp với những người ở nhà chung cư hay không có nhiều thời gian rảnh rỗi. Ngoài ra, việc ngắm nhìn chim bay nhảy trong lồng cũng là một thú vui tao nhã, giúp giảm căng thẳng và áp lực từ cuộc sống hàng ngày.</p>
+
+        <h4 style="color: #333; font-size: 24px; margin-top: 30px; font-weight: bold;">Nhược điểm khi nuôi chim:</h4>
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Tuy nhiên, nuôi chim cũng có một số thách thức nhất định. Chim thường cần không gian thoáng đãng, sạch sẽ, và phải được đảm bảo cung cấp đầy đủ ánh sáng và không khí trong lành. Một số loài chim cảnh cần sự chăm sóc đặc biệt về thức ăn và nước uống, đòi hỏi chủ nhân phải am hiểu về chế độ dinh dưỡng của chúng. Ngoài ra, lồng chim cần được vệ sinh thường xuyên để đảm bảo môi trường sống cho chim luôn sạch sẽ và không bị nhiễm bệnh. Một số giống chim có thể gây tiếng ồn, đặc biệt là vào ban đêm, khiến cho một số người cảm thấy phiền toái.</p>
+
+        <p style="font-size: 18px; line-height: 1.8; color: #555; text-align: justify;">Dù có những nhược điểm nhất định, nhưng với sự thanh thoát, tiếng hót vui tươi và hình dáng nhỏ nhắn, chim vẫn là một lựa chọn tuyệt vời cho những ai muốn mang thiên nhiên vào ngôi nhà của mình. Chúng không chỉ là loài vật cảnh mà còn là người bạn đồng hành, mang đến niềm vui và cảm giác bình yên cho cuộc sống.</p>
             
 
 
