@@ -19,7 +19,7 @@ if (isset($_SESSION['user'])) {
     /* Cấu trúc lưới cho sản phẩm và danh mục */
 .ftco-section .container .row {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; 
 }
 
 .product-category {
@@ -170,7 +170,7 @@ if (isset($_SESSION['user'])) {
                 <div class="search-container">
                     <form method="POST">
                         <input type="text" name="query" placeholder="Tìm kiếm">
-                        <input type="submit" name="search" id="">
+                        <input type="submit" name="search" id="" value="Tìm kiếm">
                     </form>
                     <?php
                     if(isset($_POST['search'])){
@@ -182,6 +182,7 @@ if (isset($_SESSION['user'])) {
                 </div>
                 <h3>DANH MỤC</h3>
                 <table class="product-category">
+                  <td><a href="shop.php">All</a></td>
                   <?php
                   // Lấy danh mục hiện tại từ URL hoặc mặc định là "All"
                   $current_cat = isset($_GET['cat']) ? $_GET['cat'] : 'All';
@@ -194,9 +195,8 @@ if (isset($_SESSION['user'])) {
                       // Duyệt qua từng danh mục
                       while ($row = $categories->fetch_assoc()) {
                           $category_name = htmlspecialchars($row['name_cat']); // Xử lý dữ liệu đầu ra an toàn
-                          $active_class = ($current_cat == $category_name) ? 'active' : '';
                           echo "
-                          <tr class=\"$active_class\">
+                          <tr>
                               <td><a href=\"shop.php?cat=$category_name\">$category_name</a></td>
                           </tr>";
                       }
