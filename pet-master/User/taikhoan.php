@@ -239,7 +239,7 @@ if (isset($_SESSION['user'])) {
                 $select = $get_data->select_user($_SESSION['user']);
                 foreach ($select as $se) { ?>
 	          	<p><strong>Tên tài khoản: </strong><?php echo $se['username']; ?></p>
-                    <p><strong>Số điện thoại: </strong><?php echo $se['phone']; ?></p>
+                 
                     <p><strong>Email: </strong><?php echo $se['email']; ?></p>
                     <?php } ?>
 						</div>

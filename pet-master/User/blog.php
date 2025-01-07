@@ -98,7 +98,7 @@ if (isset($_SESSION['user'])) {
 						<div class="row">
 							<div class="col-md-12 d-flex ftco-animate">
 		            <div class="blog-entry align-self-stretch d-md-flex">
-		              <a href="blog-single.php" class="block-20" style="background-image: url('images/meomeo.jpg');">
+		              <a href="blog-single2.php" class="block-20" style="background-image: url('images/meomeo.jpg');">
 		              </a>
 		              <div class="text d-block pl-md-4">
 		              	<div class="meta mb-3">
@@ -106,10 +106,10 @@ if (isset($_SESSION['user'])) {
 		                  <div><a href="#">Admin</a></div>
 		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
 		                </div>
-		                <h3 class="heading"><a href="blog-single.php">Mèo, đồng minh trung thành của con người, là loài vật mà chúng ta yêu chiều và nuôi nhất trong gia đình. Với hơn 3.500 đến 8.000 năm sống gần gũi với loài người, mèo đã trở thành thành viên quan trọng, mang lại nhiều niềm vui và hạnh phúc.
+		                <h3 class="heading"><a href="blog-single2.php">Mèo, đồng minh trung thành của con người, là loài vật mà chúng ta yêu chiều và nuôi nhất trong gia đình. Với hơn 3.500 đến 8.000 năm sống gần gũi với loài người, mèo đã trở thành thành viên quan trọng, mang lại nhiều niềm vui và hạnh phúc.
 
 Mèo không chỉ là động vật cưng, mà còn là những người bạn thân thiết với con người</p>
-		                <p><a href="blog-single.php" class="btn btn-primary py-2 px-3">Xem thêm</a></p>
+		                <p><a href="blog-single2.php" class="btn btn-primary py-2 px-3">Xem thêm</a></p>
 		              </div>
 		            </div>
 		          </div>
@@ -130,7 +130,7 @@ Mèo không chỉ là động vật cưng, mà còn là những người bạn t
 		          </div>
 		          <div class="col-md-12 d-flex ftco-animate">
 		            <div class="blog-entry align-self-stretch d-md-flex">
-		              <a href="blog-single.php" class="block-20" style="background-image: url('images/chimchim.jpg');">
+		              <a href="blog-single3.php" class="block-20" style="background-image: url('images/chimchim.jpg');">
 		              </a>
 		              <div class="text d-block pl-md-4">
 		              	<div class="meta mb-3">
@@ -138,14 +138,14 @@ Mèo không chỉ là động vật cưng, mà còn là những người bạn t
 		                  <div><a href="#">Admin</a></div>
 		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
 		                </div>
-		                <h3 class="heading"><a href="blog-single.php">Chim – người bạn đồng hành thanh thoát và đầy tự do của con người, mang vẻ đẹp và sự bí ẩn của thiên nhiên đến gần chúng ta. Loài vật bay lượn nhẹ nhàng này không chỉ là biểu tượng của bầu trời bao la, mà còn là niềm vui, sự an lành cho hầu hết các gia đình yêu thiên nhiên.</p>
-		                <p><a href="blog-single.php" class="btn btn-primary py-2 px-3">Xem thêm</a></p>
+		                <h3 class="heading"><a href="blog-single3.php">Chim – người bạn đồng hành thanh thoát và đầy tự do của con người, mang vẻ đẹp và sự bí ẩn của thiên nhiên đến gần chúng ta. Loài vật bay lượn nhẹ nhàng này không chỉ là biểu tượng của bầu trời bao la, mà còn là niềm vui, sự an lành cho hầu hết các gia đình yêu thiên nhiên.</p>
+		                <p><a href="blog-single3.php" class="btn btn-primary py-2 px-3">Xem thêm</a></p>
 		              </div>
 		            </div>
 		          </div>
 		          <div class="col-md-12 d-flex ftco-animate">
 		            <div class="blog-entry align-self-stretch d-md-flex">
-		              <a href="blog-single.php" class="block-20" style="background-image: url('images/thotho.jpg');">
+		              <a href="blog-single4.php" class="block-20" style="background-image: url('images/thotho.jpg');">
 		              </a>
 		              <div class="text d-block pl-md-4">
 		              	<div class="meta mb-3">
@@ -153,14 +153,14 @@ Mèo không chỉ là động vật cưng, mà còn là những người bạn t
 		                  <div><a href="#">Admin</a></div>
 		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
 		                </div>
-		                <h3 class="heading"><a href="blog-single.php">Thỏ – loài vật nhỏ bé với bộ lông mềm mịn, đôi tai dài và cặp mắt tròn xoe đáng yêu, từ lâu đã trở thành thú cưng thân thiện trong nhiều gia đình. Thỏ có tính cách hiền lành, dễ gần và thích được vuốt ve. Chúng di chuyển nhanh nhẹn, đặc biệt là những cú nhảy nhẹ nhàng, linh hoạt. Thỏ thường ăn cỏ, rau xanh và các loại củ, rất dễ chăm sóc. Tuy nhiên, vì thỏ khá nhút nhát nên cần một môi trường yên tĩnh, ít tiếng ồn để chúng cảm thấy an toàn.</p>
-		                <p><a href="blog-single.php" class="btn btn-primary py-2 px-3">Xem thêm</a></p>
+		                <h3 class="heading"><a href="blog-single4.php">Thỏ – loài vật nhỏ bé với bộ lông mềm mịn, đôi tai dài và cặp mắt tròn xoe đáng yêu, từ lâu đã trở thành thú cưng thân thiện trong nhiều gia đình. Thỏ có tính cách hiền lành, dễ gần và thích được vuốt ve. Chúng di chuyển nhanh nhẹn, đặc biệt là những cú nhảy nhẹ nhàng, linh hoạt. Thỏ thường ăn cỏ, rau xanh và các loại củ, rất dễ chăm sóc. Tuy nhiên, vì thỏ khá nhút nhát nên cần một môi trường yên tĩnh, ít tiếng ồn để chúng cảm thấy an toàn.</p>
+		                <p><a href="blog-single4.php" class="btn btn-primary py-2 px-3">Xem thêm</a></p>
 		              </div>
 		            </div>
 		          </div>
 		          <div class="col-md-12 d-flex ftco-animate">
 		            <div class="blog-entry align-self-stretch d-md-flex">
-		              <a href="blog-single.php" class="block-20" style="background-image: url('images/chuot.jpg');">
+		              <a href="blog-single5.php" class="block-20" style="background-image: url('images/chuot.jpg');">
 		              </a>
 		              <div class="text d-block pl-md-4">
 		              	<div class="meta mb-3">
@@ -168,14 +168,14 @@ Mèo không chỉ là động vật cưng, mà còn là những người bạn t
 		                  <div><a href="#">Admin</a></div>
 		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
 		                </div>
-		                <h3 class="heading"><a href="blog-single.php">Chuột – tuy thường bị coi là loài vật gây hại, nhưng thực tế, nhiều loài chuột như chuột hamster hay chuột lang lại là những người bạn nhỏ đáng yêu trong các gia đình yêu thích động vật. Chuột rất thông minh và nhanh nhẹn, chúng có thể học cách sử dụng các công cụ, ghi nhớ đường đi và thậm chí có tình cảm với người chăm sóc chúng. Dù vậy, việc nuôi chuột cần lưu ý về vệ sinh vì chúng có thể gặm nhấm đồ vật hoặc gây mùi nếu không được chăm sóc đúng cách.</p>
-		                <p><a href="blog-single.php" class="btn btn-primary py-2 px-3">Xem thêm</a></p>
+		                <h3 class="heading"><a href="blog-single5.php">Chuột – tuy thường bị coi là loài vật gây hại, nhưng thực tế, nhiều loài chuột như chuột hamster hay chuột lang lại là những người bạn nhỏ đáng yêu trong các gia đình yêu thích động vật. Chuột rất thông minh và nhanh nhẹn, chúng có thể học cách sử dụng các công cụ, ghi nhớ đường đi và thậm chí có tình cảm với người chăm sóc chúng. Dù vậy, việc nuôi chuột cần lưu ý về vệ sinh vì chúng có thể gặm nhấm đồ vật hoặc gây mùi nếu không được chăm sóc đúng cách.</p>
+		                <p><a href="blog-single5.php" class="btn btn-primary py-2 px-3">Xem thêm</a></p>
 		              </div>
 		            </div>
 		          </div>
 		          <div class="col-md-12 d-flex ftco-animate">
 		            <div class="blog-entry align-self-stretch d-md-flex">
-		              <a href="blog-single.php" class="block-20" style="background-image: url('images/caca.jpg');">
+		              <a href="blog-single6.php" class="block-20" style="background-image: url('images/caca.jpg');">
 		              </a>
 		              <div class="text d-block pl-md-4">
 		              	<div class="meta mb-3">
@@ -183,8 +183,8 @@ Mèo không chỉ là động vật cưng, mà còn là những người bạn t
 		                  <div><a href="#">Admin</a></div>
 		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
 		                </div>
-		                <h3 class="heading"><a href="blog-single.php">Cá – sinh vật thanh nhã của đại dương và sông suối, mang lại sự yên bình và tĩnh lặng cho những ai yêu thích ngắm nhìn. Cá cảnh với nhiều màu sắc sặc sỡ bơi lội trong bể kính tạo nên một bức tranh thiên nhiên sống động trong ngôi nhà. Nuôi cá giúp con người thư giãn, giải tỏa căng thẳng sau những giờ làm việc mệt mỏi. Tuy nhiên, việc nuôi cá đòi hỏi sự chăm sóc tỉ mỉ về môi trường nước, thức ăn và nhiệt độ để đảm bảo sức khỏe cho chúng. Cá không chỉ làm đẹp không gian sống mà còn là biểu tượng của sự bình yên và cân bằng trong cuộc sống</p>
-		                <p><a href="blog-single.php" class="btn btn-primary py-2 px-3">Xem thêm</a></p>
+		                <h3 class="heading"><a href="blog-single6.php">Cá – sinh vật thanh nhã của đại dương và sông suối, mang lại sự yên bình và tĩnh lặng cho những ai yêu thích ngắm nhìn. Cá cảnh với nhiều màu sắc sặc sỡ bơi lội trong bể kính tạo nên một bức tranh thiên nhiên sống động trong ngôi nhà. Nuôi cá giúp con người thư giãn, giải tỏa căng thẳng sau những giờ làm việc mệt mỏi. Tuy nhiên, việc nuôi cá đòi hỏi sự chăm sóc tỉ mỉ về môi trường nước, thức ăn và nhiệt độ để đảm bảo sức khỏe cho chúng. Cá không chỉ làm đẹp không gian sống mà còn là biểu tượng của sự bình yên và cân bằng trong cuộc sống</p>
+		                <p><a href="blog-single6.php" class="btn btn-primary py-2 px-3">Xem thêm</a></p>
 		              </div>
 		            </div>
 		          </div>

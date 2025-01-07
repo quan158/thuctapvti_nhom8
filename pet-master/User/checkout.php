@@ -137,6 +137,7 @@ if (isset($_SESSION['user'])) {
                 <?php } ?>
                 </div>
                 <div class="w-100"></div>
+                <div> <a href="taikhoan.php">chưa có địa chỉ ấn vào đây</a></div>
                 <div class="cart-detail p-3 p-md-4">
                   <h3 class="billing-heading mb-4">Phương thức thanh toán</h3>
                   <div class="form-group">

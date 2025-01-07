@@ -313,7 +313,7 @@ if (isset($_SESSION['user'])) {
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Cà chua tươi ngon, mọng nước, vị ngọt thanh. Đã thử làm salad, rất hợp!</p>
+                    <p class="mb-5 pl-4 line">mấy bạn thỏ của shop rất đáng yêu</p>
                     <p class="name">Vũ Kiệt</p>
                   </div>
                 </div>
@@ -326,7 +326,7 @@ if (isset($_SESSION['user'])) {
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Táo đỏ giòn ngọt, vị chua nhẹ. Ăn rất vừa miệng, tốt cho sức khỏe.</p>
+                    <p class="mb-5 pl-4 line">hãy đến pet kingdom để có cho mình một bạn thú cưng .</p>
                     <p class="name">Mạc Thanh Bình</p>
                   </div>
                 </div>
@@ -339,7 +339,7 @@ if (isset($_SESSION['user'])) {
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Chuối chín vàng ươm, thịt mềm, thơm lừng. Ăn sáng rất tiện lợi.</p>
+                    <p class="mb-5 pl-4 line">chất lượng dịch vụ 100%.</p>
                     <p class="name">Phí Văn Quân</p> 
                   </div>
                 </div>
@@ -352,7 +352,7 @@ if (isset($_SESSION['user'])) {
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Óc chó bùi béo, giàu dinh dưỡng. Tốt cho trí não.</p>
+                    <p class="mb-5 pl-4 line">cảm ơn shop đã cho mình một bạn chó dễ thương.</p>
                     <p class="name">Phan Đức</p>
                   </div>
                 </div>
@@ -365,7 +365,7 @@ if (isset($_SESSION['user'])) {
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Hạt bí ngô rang mặn mà, giòn rụm. Ăn kèm bia rất ngon..</p>
+                    <p class="mb-5 pl-4 line">shop mười trên mười </p>
                     <p class="name">Tùng Dương</p>
                   </div>
                 </div>
@@ -412,7 +412,7 @@ if (isset($_SESSION['user'])) {
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Pet Kingdom</h2>
-              <p>Sản phẩm tươi sạch</p>
+              <p>hãy sắm cho mình thú cưng của bạn</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
